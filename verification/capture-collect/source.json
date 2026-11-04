@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "full": {
+      "firstLine": 158,
+      "lastLine": 161,
+      "startByte": 4838,
+      "endByteExclusive": 5026,
+      "sha256": "a928a495ea1adeed88f748fb0b5392ad2e618b80dccea6442f933417039b5dfa",
+      "sourceCopy": "verification/capture-collect/full.ts.txt"
+    },
+    "guard": {
+      "firstLine": 158,
+      "lastLine": 160,
+      "startByte": 4838,
+      "endByteExclusive": 4940,
+      "sha256": "beff10a225df509ff6010efcaa6271d564693b14a5f1d683d90937170d7c023b",
+      "sourceCopy": "verification/capture-collect/guard.ts.txt"
+    },
+    "call": {
+      "firstLine": 161,
+      "lastLine": 161,
+      "startByte": 4940,
+      "endByteExclusive": 5026,
+      "sha256": "115f685d4dd5938511c0b39512cb50763ed98d42a49413a97b5d959f507cb07e",
+      "sourceCopy": "verification/capture-collect/call.ts.txt"
+    }
+  },
+  "languageReference": "ECMA-262, 16th edition (2025)",
+  "sourceBoundary": "Original complete lines158-161: own guard and call. The fourth argument is node.#params; fifth is params. Source123 initializer is linked separately; surrounding if(m), actual regex production and search traversal remain open.",
+  "semanticBoundary": "Conditional ordinary-data descriptor/private-method model; source-produced maps feed actual helper body. Independent initial record/row/read/capacity facts; repeated handler references remain live aliases. No full-router or native-language adequacy theorem.",
+  "formalCompleteSearchTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

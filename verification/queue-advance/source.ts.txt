@@ -1,0 +1,2 @@
+      const shifted = curNodesQueue.shift()
+      curNodes = shifted ? tempNodes.concat(shifted) : tempNodes

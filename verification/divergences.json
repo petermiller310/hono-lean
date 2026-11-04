@@ -1,0 +1,647 @@
+{
+  "schemaVersion": 1,
+  "targetRevision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "status": "initial_pinned_behavior_delta_catalog",
+  "classificationPolicy": "Only D1 is the existing comparator exception. Other entries are layer/domain/representation/option/scope differences and do not extend the comparison allowlist.",
+  "runtimeEvidencePolicy": "Bun 1.4.0 direct read-only imports and in-process app.request probes at this pin provide finite observations, not universal proofs. No network server was contacted.",
+  "runtimeProbeDescription": "verification/trust_probe.ts reproduces the original runtime rows; verification/routing-method-probe.ts preserves additional one-case-per-process observations in the routing worklist. Neither is a universal source proof.",
+  "localEvidenceRefs": [
+    "examples/v1.json",
+    "tests/compare_hono.py",
+    "comparison/hono_runner.ts",
+    "SPEC.md"
+  ],
+  "openFrontiers": [
+    {
+      "id": "NUMERIC-ORDER-FRONTIER",
+      "status": "unproved_modeling_obligation",
+      "assumptionId": "JS-NUMBERS",
+      "sourceRefs": [
+        {
+          "path": "src/router/trie-router/node.ts",
+          "startLine": 17,
+          "endLine": 18
+        },
+        {
+          "path": "src/router/trie-router/node.ts",
+          "startLine": 55,
+          "endLine": 60
+        },
+        {
+          "path": "src/router/trie-router/node.ts",
+          "startLine": 213,
+          "endLine": 219
+        }
+      ],
+      "issue": "Unbounded Nat ordinals/order are not a faithful model of arbitrarily long module-global Number score histories. No runtime overflow counterexample or source theorem is claimed by this ledger."
+    }
+  ],
+  "entries": [
+    {
+      "id": "D1",
+      "classification": "observed_contract_counterexample",
+      "title": "__proto__ capture value has object type",
+      "layers": [
+        "restricted Lean capture contract",
+        "pinned raw TrieRouter"
+      ],
+      "restrictedBaseline": "GET /:__proto__ -> capture at GET /alpha returns own __proto__ string alpha.",
+      "pinnedBehavior": "The exact recorded raw TrieRouter witness returns own __proto__ object value {}, not a string.",
+      "sourceRefs": [
+        {
+          "path": "src/router/trie-router/node.ts",
+          "startLine": 75,
+          "endLine": 80
+        },
+        {
+          "path": "src/router/trie-router/node.ts",
+          "startLine": 121,
+          "endLine": 123
+        },
+        {
+          "path": "src/router/trie-router/node.ts",
+          "startLine": 186,
+          "endLine": 191
+        },
+        {
+          "path": "src/router/utils.ts",
+          "startLine": 1,
+          "endLine": 1
+        }
+      ],
+      "evidence": {
+        "sourceInspection": true,
+        "runtimeObservation": {
+          "runtime": "Bun 1.4.0",
+          "observedRaw": [
+            [
+              [
+                "capture",
+                {
+                  "__proto__": {}
+                }
+              ]
+            ]
+          ],
+          "ownKeys": [
+            "__proto__"
+          ],
+          "captureType": "object",
+          "outputParamsHaveNullPrototype": true
+        },
+        "formalUpstreamCounterexampleTheorem": null,
+        "formalLocalMechanism": {
+          "file": "HonoLean/Upstream/D1/Mechanism.lean",
+          "theorems": [
+            "proto_transfer",
+            "proto_capture_not_string"
+          ],
+          "scope": "Complete parsed chosen-handler block plus parsed allocation helper; temporary write and chosen-handler/key-array setup remain modeled. Post-block readValue is observation sampling, not an execution-event trace. No whole Node/search/JSON refinement.",
+          "helperSourceTheorem": "HonoLean.Upstream.CreateNullObject.parsed_source_correct",
+          "assignmentSourceTheorem": "HonoLean.Upstream.NodeParamAssignment.parsed_source_correct_framed",
+          "chosenHandlerBlockTheorem": "HonoLean.Upstream.NodeParamLoop.parsed_source_correct"
+        }
+      },
+      "consequence": "Preserve exactly the existing D1 fixture and comparator gate; model object/prototype semantics before proving a universal Hono capture contract.",
+      "allowlistChange": false,
+      "exactExistingFixture": {
+        "id": "parameter-name-is-data",
+        "why": "D1: the parameter name __proto__ must still capture a string.",
+        "routes": [
+          {
+            "method": "GET",
+            "pattern": "/:__proto__",
+            "handler": "capture"
+          }
+        ],
+        "steps": [
+          {
+            "op": "lookup",
+            "request": {
+              "method": "GET",
+              "path": "/alpha"
+            },
+            "expected": [
+              {
+                "registration": 0,
+                "handler": "capture",
+                "params": {
+                  "__proto__": "alpha"
+                }
+              }
+            ],
+            "baselineDifference": "D1",
+            "baselineExpected": [
+              {
+                "registration": 0,
+                "handler": "capture",
+                "params": {
+                  "__proto__": {}
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "exactFixtureCanonicalSha256": "b57c280ae21508b084fe004b5a8ed04eb7b73bb46d1f72f40aa6260557eacaba",
+      "localEvidenceRefs": [
+        "examples/v1.json#parameter-name-is-data",
+        "tests/compare_hono.py#exact_d1",
+        "comparison/hono_runner.ts",
+        "docs/router/history/comparison-milestone.md"
+      ],
+      "controls": [
+        {
+          "name": "id",
+          "observedRaw": [
+            [
+              [
+                "capture",
+                {
+                  "id": "alpha"
+                }
+              ]
+            ]
+          ]
+        },
+        {
+          "name": "constructor",
+          "observedRaw": [
+            [
+              [
+                "capture",
+                {
+                  "constructor": "alpha"
+                }
+              ]
+            ]
+          ]
+        }
+      ],
+      "explanationStatus": "Source/native mechanism evidence, not a checked upstream semantics theorem.",
+      "mechanismEvidence": "Temporary ordinary params objects are created with {}; assigning a string to inherited __proto__ does not create an own key in the observed standard realm. Later nodeParams[key] can read Object.prototype, which is stored as an own key in a null-prototype output. A native micro-control observed own=false and lookupIsObjectPrototype=true after that assignment."
+    },
+    {
+      "id": "LAYER-HEAD",
+      "classification": "layer_behavior_difference",
+      "title": "Application HEAD differs from raw router matching",
+      "layers": [
+        "restricted/raw router method match",
+        "HonoBase application dispatch"
+      ],
+      "restrictedBaseline": "HEAD never falls back to GET inside the restricted matcher.",
+      "pinnedBehavior": "HonoBase dispatch processes HEAD via GET route matching and wraps the response with null body; the underlying Request seen by the handler still has method HEAD.",
+      "sourceRefs": [
+        {
+          "path": "src/hono-base.ts",
+          "startLine": 431,
+          "endLine": 438
+        },
+        {
+          "path": "src/hono.test.ts",
+          "startLine": 2927,
+          "endLine": 2952
+        }
+      ],
+      "evidence": {
+        "sourceInspection": true,
+        "runtimeObservation": {
+          "runtime": "Bun 1.4.0",
+          "appStatus": 200,
+          "appBodyText": "",
+          "appBodyWasNull": true,
+          "methodSeenByHandler": "HEAD",
+          "GETOnlyRawTrieHEADResult": [
+            []
+          ]
+        },
+        "formalUpstreamCounterexampleTheorem": null
+      },
+      "consequence": "Give app dispatch and raw router separate contracts; preserve the existing no-fallback raw-router theorem.",
+      "allowlistChange": false
+    },
+    {
+      "id": "LAYER-DEFAULT-ROUTER",
+      "classification": "layer_and_implementation_difference",
+      "title": "Default Hono selects SmartRouter",
+      "layers": [
+        "raw TrieRouter comparison",
+        "default Hono constructor and selected router"
+      ],
+      "restrictedBaseline": "Existing pinned comparison directly instantiates TrieRouter.",
+      "pinnedBehavior": "Default Hono initializes SmartRouter with RegExpRouter then TrieRouter; a first successful simple request selected RegExpRouter in the observed run.",
+      "sourceRefs": [
+        {
+          "path": "src/hono.ts",
+          "startLine": 26,
+          "endLine": 32
+        },
+        {
+          "path": "src/router/smart-router/router.ts",
+          "startLine": 32,
+          "endLine": 60
+        }
+      ],
+      "evidence": {
+        "sourceInspection": true,
+        "runtimeObservation": {
+          "runtime": "Bun 1.4.0",
+          "beforeName": "SmartRouter",
+          "afterSimpleRequestName": "SmartRouter + RegExpRouter"
+        },
+        "formalUpstreamCounterexampleTheorem": null
+      },
+      "consequence": "Verify router selection/fallback and each implementation domain; raw TrieRouter evidence does not cover the default app.",
+      "allowlistChange": false
+    },
+    {
+      "id": "LIFECYCLE-SMARTROUTER",
+      "classification": "lifecycle_domain_difference",
+      "title": "Post-match registration is router-specific",
+      "layers": [
+        "persistent Lean/raw TrieRouter append",
+        "SmartRouter lifecycle"
+      ],
+      "restrictedBaseline": "Arbitrary finite append sequences remain valid for the persistent Lean router.",
+      "pinnedBehavior": "After initial selection SmartRouter clears its route buffer and later add throws. Raw TrieRouter accepted a post-match append in the observed run.",
+      "sourceRefs": [
+        {
+          "path": "src/router/smart-router/router.ts",
+          "startLine": 13,
+          "endLine": 18
+        },
+        {
+          "path": "src/router/smart-router/router.ts",
+          "startLine": 46,
+          "endLine": 48
+        },
+        {
+          "path": "src/router/trie-router/router.ts",
+          "startLine": 9,
+          "endLine": 16
+        }
+      ],
+      "evidence": {
+        "sourceInspection": true,
+        "runtimeObservation": {
+          "runtime": "Bun 1.4.0",
+          "smartError": "Can not add a route since the matcher is already built.",
+          "rawTrieAfterAppend": [
+            [
+              [
+                "b",
+                {}
+              ]
+            ]
+          ]
+        },
+        "formalUpstreamCounterexampleTheorem": null
+      },
+      "consequence": "Model build/selection phases explicitly; do not generalize the existing append theorem to all Hono routers.",
+      "allowlistChange": false
+    },
+    {
+      "id": "SYNTAX-OPTIONAL-REGEXP",
+      "classification": "accepted_domain_difference",
+      "title": "Hono route syntax exceeds the restricted grammar",
+      "layers": [
+        "restricted pattern parser",
+        "pinned raw TrieRouter routing utilities"
+      ],
+      "restrictedBaseline": "Optional parameters and regexp components are rejected.",
+      "pinnedBehavior": "TrieRouter.add expands optional syntax through checkOptionalParameter; pattern parsing builds regexp matchers.",
+      "sourceRefs": [
+        {
+          "path": "src/router/trie-router/router.ts",
+          "startLine": 9,
+          "endLine": 12
+        },
+        {
+          "path": "src/utils/url.ts",
+          "startLine": 60,
+          "endLine": 74
+        },
+        {
+          "path": "src/utils/url.ts",
+          "startLine": 184,
+          "endLine": 218
+        }
+      ],
+      "evidence": {
+        "sourceInspection": true,
+        "runtimeObservation": {
+          "runtime": "Bun 1.4.0",
+          "optionalPattern": "/animals/:type?",
+          "without": [
+            [
+              [
+                "optional",
+                {}
+              ]
+            ]
+          ],
+          "with": [
+            [
+              [
+                "optional",
+                {
+                  "type": "cat"
+                }
+              ]
+            ]
+          ],
+          "regexpPattern": "/:id{[0-9]+}",
+          "regexpMatch": [
+            [
+              [
+                "digits",
+                {
+                  "id": "123"
+                }
+              ]
+            ]
+          ],
+          "regexpMiss": [
+            []
+          ]
+        },
+        "formalUpstreamCounterexampleTheorem": null
+      },
+      "consequence": "Add independent compatibility grammar/regexp contracts; keep the old strict rejection language intact.",
+      "allowlistChange": false
+    },
+    {
+      "id": "SYNTAX-DUPLICATE-NAMES",
+      "classification": "accepted_domain_difference",
+      "title": "Duplicate parameter names have upstream behavior",
+      "layers": [
+        "restricted unique-name parser",
+        "pinned raw TrieRouter"
+      ],
+      "restrictedBaseline": "The pattern /:id/:id is invalid_route.",
+      "pinnedBehavior": "The observed raw TrieRouter accepts /:id/:id and returns id=alpha for request /alpha/beta.",
+      "sourceRefs": [
+        {
+          "path": "src/router/trie-router/node.ts",
+          "startLine": 33,
+          "endLine": 52
+        },
+        {
+          "path": "src/router/trie-router/node.ts",
+          "startLine": 186,
+          "endLine": 203
+        }
+      ],
+      "evidence": {
+        "sourceInspection": true,
+        "runtimeObservation": {
+          "runtime": "Bun 1.4.0",
+          "method": "GET",
+          "pattern": "/:id/:id",
+          "path": "/alpha/beta",
+          "result": [
+            [
+              [
+                "duplicate",
+                {
+                  "id": "alpha"
+                }
+              ]
+            ]
+          ]
+        },
+        "formalUpstreamCounterexampleTheorem": null
+      },
+      "consequence": "Model the upstream repeated-name capture rule and possibleKeys set; do not quietly impose the Lean unique-name precondition on the full Hono source claim.",
+      "allowlistChange": false
+    },
+    {
+      "id": "LAYER-PATH-REPRESENTATION",
+      "classification": "helper_representation_and_domain_difference",
+      "title": "splitPath preserves helper-level empty components",
+      "layers": [
+        "strict text request parser",
+        "raw splitPath utility"
+      ],
+      "restrictedBaseline": "Root / parses to []; empty path, repeated/trailing slash and non-ASCII segments are rejected.",
+      "pinnedBehavior": "splitPath removes one initial empty entry from split results and retains remaining empty components and text. It is a splitter, not the strict validator or full app URL decoder.",
+      "sourceRefs": [
+        {
+          "path": "src/utils/url.ts",
+          "startLine": 8,
+          "endLine": 14
+        },
+        {
+          "path": "src/utils/url.test.ts",
+          "startLine": 14,
+          "endLine": 21
+        }
+      ],
+      "evidence": {
+        "sourceInspection": true,
+        "runtimeObservation": {
+          "runtime": "Bun 1.4.0",
+          "cases": [
+            {
+              "input": "",
+              "output": []
+            },
+            {
+              "input": "/",
+              "output": [
+                ""
+              ]
+            },
+            {
+              "input": "//a",
+              "output": [
+                "",
+                "a"
+              ]
+            },
+            {
+              "input": "/a/",
+              "output": [
+                "a",
+                ""
+              ]
+            },
+            {
+              "input": "/\u00e9",
+              "output": [
+                "\u00e9"
+              ]
+            },
+            {
+              "input": "/a%2Fb",
+              "output": [
+                "a%2Fb"
+              ]
+            }
+          ]
+        },
+        "formalUpstreamCounterexampleTheorem": null
+      },
+      "consequence": "Use a distinct UTF-16 helper contract with no normalization. This structural difference alone is not a proof that complete router responses differ.",
+      "allowlistChange": false
+    },
+    {
+      "id": "LAYER-REGISTRATION-METHOD",
+      "classification": "layer_normalization_difference",
+      "title": "Application registration uppercases method spellings",
+      "layers": [
+        "strict parseMethod",
+        "HonoBase fluent/on registration"
+      ],
+      "restrictedBaseline": "get is rejected by the restricted method parser; names are never case-folded.",
+      "pinnedBehavior": "The application registration helpers call toUpperCase; app.on(get,/lower,handler) stored GET and matched a GET request in the observed run.",
+      "sourceRefs": [
+        {
+          "path": "src/hono-base.ts",
+          "startLine": 142,
+          "endLine": 168
+        }
+      ],
+      "evidence": {
+        "sourceInspection": true,
+        "runtimeObservation": {
+          "runtime": "Bun 1.4.0",
+          "inputMethod": "get",
+          "storedMethod": "GET",
+          "responseStatus": 200,
+          "responseBody": "lower"
+        },
+        "formalUpstreamCounterexampleTheorem": null
+      },
+      "consequence": "Specify registration normalization separately from raw Router.match and Request method handling; do not alter the strict parser theorem.",
+      "allowlistChange": false
+    },
+    {
+      "id": "LAYER-STRICT-PATH-OPTION",
+      "classification": "option_and_domain_difference",
+      "title": "App strict=false handles trailing slash",
+      "layers": [
+        "strict text grammar",
+        "HonoBase getPath option"
+      ],
+      "restrictedBaseline": "Trailing slash except root is rejected before matching.",
+      "pinnedBehavior": "HonoBase selects getPathNoStrict when strict is false; that helper removes a final slash from a non-root path.",
+      "sourceRefs": [
+        {
+          "path": "src/hono-base.ts",
+          "startLine": 188,
+          "endLine": 190
+        },
+        {
+          "path": "src/utils/url.ts",
+          "startLine": 154,
+          "endLine": 158
+        }
+      ],
+      "evidence": {
+        "sourceInspection": true,
+        "runtimeObservation": null,
+        "formalUpstreamCounterexampleTheorem": null
+      },
+      "consequence": "Model strict/default/custom getPath options and URL extraction as separate application contracts; source inspection only is not a fresh runtime test.",
+      "allowlistChange": false
+    },
+    {
+      "id": "LAYER-HANDLER-EFFECTS",
+      "classification": "model_scope_difference",
+      "title": "Actual middleware executes effects and checks next progression",
+      "layers": [
+        "opaque Lean handler labels",
+        "compose and HonoBase dispatch"
+      ],
+      "restrictedBaseline": "The verified matcher returns labels/captures and executes no handlers.",
+      "pinnedBehavior": "Actual middleware awaits callbacks, updates routeIndex/context/error/finalization, and rejects repeated next; default dispatch also has a separate single-handler path.",
+      "sourceRefs": [
+        {
+          "path": "src/compose.ts",
+          "startLine": 20,
+          "endLine": 70
+        },
+        {
+          "path": "src/hono-base.ts",
+          "startLine": 448,
+          "endLine": 483
+        }
+      ],
+      "evidence": {
+        "sourceInspection": true,
+        "runtimeObservation": {
+          "runtime": "Bun 1.4.0",
+          "trace": [
+            "before",
+            "handler",
+            "after"
+          ],
+          "responseStatus": 200,
+          "repeatedNextStatus": 500,
+          "repeatedNextBody": "next() called multiple times"
+        },
+        "formalUpstreamCounterexampleTheorem": null
+      },
+      "consequence": "Add parametric handler effects, exceptions/promises/trace semantics and separate single/multi-handler proofs; label matching proves none of those execution claims.",
+      "allowlistChange": false
+    }
+  ],
+  "upstreamSourceSnapshots": {
+    "src/compose.ts": {
+      "sha256": "6c49ae86221a98c855ee8d3a4178ff85ffb6791154637be0c7f75e74541d61fd",
+      "gitBlob": "b1d4508ffe490fe4eaf1fa25a182c95f486685e5",
+      "lineCount": 73
+    },
+    "src/hono-base.ts": {
+      "sha256": "731d11ad849056b064b4b87c95b02820c539cee5cd50f6746a308f78f0258460",
+      "gitBlob": "c403e3f752bec45d2e9749de672dd42b981dabfa",
+      "lineCount": 564
+    },
+    "src/hono.test.ts": {
+      "sha256": "386698eea91db32cd31f0e2ac39a632f246de6891bea88778d6c577c106b36ad",
+      "gitBlob": "c6ae0379ee2f3e5000415f7a011608e2b316ba39",
+      "lineCount": 3833
+    },
+    "src/hono.ts": {
+      "sha256": "28317c8a40c83cc89a80f268bd4dad18cd423f4704b621dda272292a10f63e77",
+      "gitBlob": "c9472202a710231b8151e06cc812290bf53bd3ab",
+      "lineCount": 34
+    },
+    "src/router/smart-router/router.ts": {
+      "sha256": "c99a71bd59c3516a6edb2de16f473ad38c2ac5993ece46bafebe1fb1f3fe12dd",
+      "gitBlob": "9ec464da8c25dfc2dacaee9ea13174a7d0020ec6",
+      "lineCount": 70
+    },
+    "src/router/trie-router/node.ts": {
+      "sha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+      "gitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+      "lineCount": 221
+    },
+    "src/router/trie-router/router.ts": {
+      "sha256": "ae3a4a073d54a232b424f32a7c8003fded570a28b5d7ce0eb2a7ac7b8831d5f9",
+      "gitBlob": "403bacb3f2ad66b30e9af42f31d745a9c0190ced",
+      "lineCount": 18
+    },
+    "src/router/utils.ts": {
+      "sha256": "457dd7ca0a9ae97ce028beabaeafd6fb48bbf5f548370dab7eba4e4b53a8304a",
+      "gitBlob": "c9fadb65c9c5b6c171b9fbea790e08a96a131ffb",
+      "lineCount": 1
+    },
+    "src/utils/url.test.ts": {
+      "sha256": "2fc582760602904849e7eefdbd9f66266d0b775a2318d1aa0322928e960af0b9",
+      "gitBlob": "f34daae61bb0a78d6ad3f0a5b8311098a7125390",
+      "lineCount": 384
+    },
+    "src/utils/url.ts": {
+      "sha256": "d1f85f414ed8fd3682000499e74e8723139810fd612e1e1a1b4075a52ef91248",
+      "gitBlob": "201383736f2531bf626427957e896b8fcc816ccf",
+      "lineCount": 337
+    }
+  },
+  "additionalBehaviorEvidence": {
+    "ledger": "verification/routing-behaviors.json",
+    "probe": "verification/routing-method-probe.ts",
+    "scope": "15 finite isolated raw-method observations with exceptions and watched mutations; separate from D1 and not comparator exceptions."
+  }
+}

@@ -1,0 +1,1 @@
+export const getPattern = (label: string, next?: string): Pattern | null => {

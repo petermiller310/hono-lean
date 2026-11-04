@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "count": {
+      "firstLine": 176,
+      "lastLine": 176,
+      "startByte": 5476,
+      "endByteExclusive": 5546,
+      "sha256": "8f93b148e6dc2f2cf67003adc4e5791a8c5c7132dcab0fd7c566599201ed9c54",
+      "sourceCopy": "verification/component-count/count.ts.txt"
+    },
+    "full": {
+      "firstLine": 176,
+      "lastLine": 178,
+      "startByte": 5476,
+      "endByteExclusive": 5667,
+      "sha256": "134ae3cfeeabb597d841a7e8196603fef6578c30318252cdfc24e1f7a0b61a8b",
+      "sourceCopy": "verification/component-count/full.ts.txt"
+    }
+  },
+  "scheduleDependency": {
+    "sourceMetadata": "verification/queue-schedule/source.json",
+    "firstLine": 177,
+    "lastLine": 178,
+    "startByte": 5546,
+    "endByteExclusive": 5667,
+    "sha256": "f81b14a2daf91271162188b3cb1061728c7dedfdc5581a73eae01caa51c0f198",
+    "sourceCopy": "verification/queue-schedule/source.ts.txt"
+  },
+  "languageReference": "ECMA-262, 16th edition (2025)",
+  "parserBoundary": "Separate original global single-unit RegExp literal/match/optional-length/nullish AST; prior source grammar and old Value/Expr/State ABI unchanged. Full191B reassembles count70B plus existing scheduling121B.",
+  "semanticBoundary": "Projected unit RegExp cells plus indexed array store. A tracked global accumulator is allocated even if resultnull; per-exec internal arrays/other native RegExp state and total native allocation counts are not represented. Exact count/index facts derive from initial UTF16 input, not supplied output. Earlier matcher.exec/count input origin,for-in,params175,fullbody/native language adequacy remain open.",
+  "formalCompleteBodyTheorem": null,
+  "formalCompleteSearchTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

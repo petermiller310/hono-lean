@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/honojs/hono.git",
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "sourcePath": "src/router/utils.ts",
+  "sourceGitBlob": "c9fadb65c9c5b6c171b9fbea790e08a96a131ffb",
+  "sourceSha256": "457dd7ca0a9ae97ce028beabaeafd6fb48bbf5f548370dab7eba4e4b53a8304a",
+  "functionName": "createNullObject",
+  "startByte": 0,
+  "endByteExclusive": 58,
+  "functionSha256": "457dd7ca0a9ae97ce028beabaeafd6fb48bbf5f548370dab7eba4e4b53a8304a",
+  "entireModuleEmbedded": true,
+  "languageReference": "ECMA-262 16th edition (2025)",
+  "sourceSubset": "ASCII zero-parameter expression-bodied declaration, ambient Object binding, method call and null literal",
+  "linkage": "External Git/whole-file embedding checker plus kernel-checked Lean syntax; standard Object binding/dispatch and object-model adequacy remain explicit interpretation boundaries"
+}

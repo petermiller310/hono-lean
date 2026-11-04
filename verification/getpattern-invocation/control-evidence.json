@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "verified": false,
+  "nativeOnly": true,
+  "formalNativeLanguageAdequacyTheorem": null,
+  "formalGeneralCallbackTheorem": null,
+  "baselineAllowlistChanged": false,
+  "records": [
+    {
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "bun",
+      "version": "1.4.0",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 796,
+      "sourceSha256": "ad1203945736ef5e2219a39c3cd9b5173760c3c5e981e757ab7d1b1a8f74d30b",
+      "verified": false,
+      "nativeOnly": true,
+      "actualFullModule": true,
+      "typescriptLoaderVerified": false,
+      "moduleInstantiationVerified": false,
+      "formalNativeLanguageAdequacyTheorem": null,
+      "formalGeneralCallbackTheorem": null,
+      "baselineAllowlistChanged": false,
+      "results": [
+        {
+          "id": "actual-module-arrow-wildcard-skips-getters",
+          "first": "*",
+          "second": "*",
+          "trace": []
+        },
+        {
+          "id": "actual-module-current-global-between-calls",
+          "sameWarmTuple": true,
+          "coldError": "TypeError"
+        },
+        {
+          "id": "actual-module-arguments-and-arrow-kind",
+          "omittedUndefinedExtraSame": true,
+          "name": "getPattern",
+          "length": 2,
+          "noOwnPrototype": true,
+          "constructErrorAfterAddingPrototype": "TypeError"
+        },
+        {
+          "id": "callback-mutates-global-during-call-frontier",
+          "trace": [
+            "match",
+            "global-read",
+            "construct"
+          ],
+          "source": "^[A-z]+$",
+          "formalCallbackTheorem": null
+        }
+      ]
+    },
+    {
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "node",
+      "version": "22.22.2",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 796,
+      "sourceSha256": "ad1203945736ef5e2219a39c3cd9b5173760c3c5e981e757ab7d1b1a8f74d30b",
+      "verified": false,
+      "nativeOnly": true,
+      "actualFullModule": true,
+      "typescriptLoaderVerified": false,
+      "moduleInstantiationVerified": false,
+      "formalNativeLanguageAdequacyTheorem": null,
+      "formalGeneralCallbackTheorem": null,
+      "baselineAllowlistChanged": false,
+      "results": [
+        {
+          "id": "actual-module-arrow-wildcard-skips-getters",
+          "first": "*",
+          "second": "*",
+          "trace": []
+        },
+        {
+          "id": "actual-module-current-global-between-calls",
+          "sameWarmTuple": true,
+          "coldError": "TypeError"
+        },
+        {
+          "id": "actual-module-arguments-and-arrow-kind",
+          "omittedUndefinedExtraSame": true,
+          "name": "getPattern",
+          "length": 2,
+          "noOwnPrototype": true,
+          "constructErrorAfterAddingPrototype": "TypeError"
+        },
+        {
+          "id": "callback-mutates-global-during-call-frontier",
+          "trace": [
+            "match",
+            "global-read",
+            "construct"
+          ],
+          "source": "^[A-z]+$",
+          "formalCallbackTheorem": null
+        }
+      ]
+    }
+  ]
+}

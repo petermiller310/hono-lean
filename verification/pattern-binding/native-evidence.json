@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "targetRevision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "status": "native_only_planned_frontier",
+  "formalBindingTheorem": null,
+  "initialFailure": "Original skip-value assertion failed on pinned Bun1.4.0 (exit1) while Node22.22.2 passed (exit0). Independent minimal replay retained extra value0 Get and throwing-error/success difference. No original counterexample/case or Hono baseline/allowlist removed.",
+  "records": [
+    {
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "bun",
+      "version": "1.4.0",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 44,
+      "sourceSha256": "4bd90c878a3496b7a05edc1a3a90ba0e83afc24484b15acd1e600d5aff95a2a1",
+      "verified": false,
+      "nativeOnly": true,
+      "plannedFrontier": true,
+      "formalBindingTheorem": null,
+      "plainJavaScript": true,
+      "typescriptErasure": false,
+      "observations": {
+        "customEvents": [
+          "getIterator",
+          "iterator",
+          "getNext",
+          "next0",
+          "done0",
+          "value0",
+          "next1",
+          "done1",
+          "value1",
+          "next2",
+          "done2",
+          "value2",
+          "getReturn",
+          "return"
+        ],
+        "customNextCalls": 3,
+        "elidedIteratorResultValueWasNotRead": false,
+        "engineDifference": "ENGINE-ELISION-1",
+        "standardArrayIndexZeroGet": [
+          "array0"
+        ],
+        "defaultReturnMissing": true,
+        "prototypeChangedClose": [
+          "next",
+          "next",
+          "next",
+          "getReturn",
+          "return"
+        ],
+        "prototypeRestored": true,
+        "shortExhaustion": [
+          "next0",
+          "next1"
+        ],
+        "shortMissingBindingsUndefined": true
+      },
+      "elisionDifferenceReproducer": "verification/pattern-binding/elision-difference.mjs",
+      "scope": "Planned actual138 frontier only. Pinned Bun additional value0 Get retained as ENGINE-ELISION-1; no baseline allowlist change. Custom iterator/prototype changes and native allocation/lexical/effect semantics are not formal source adequacy. Default standard-array protocol is the next implementation, not three index reads."
+    },
+    {
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "node",
+      "version": "22.22.2",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 44,
+      "sourceSha256": "4bd90c878a3496b7a05edc1a3a90ba0e83afc24484b15acd1e600d5aff95a2a1",
+      "verified": false,
+      "nativeOnly": true,
+      "plannedFrontier": true,
+      "formalBindingTheorem": null,
+      "plainJavaScript": true,
+      "typescriptErasure": false,
+      "observations": {
+        "customEvents": [
+          "getIterator",
+          "iterator",
+          "getNext",
+          "next0",
+          "done0",
+          "next1",
+          "done1",
+          "value1",
+          "next2",
+          "done2",
+          "value2",
+          "getReturn",
+          "return"
+        ],
+        "customNextCalls": 3,
+        "elidedIteratorResultValueWasNotRead": true,
+        "engineDifference": "ENGINE-ELISION-1",
+        "standardArrayIndexZeroGet": [
+          "array0"
+        ],
+        "defaultReturnMissing": true,
+        "prototypeChangedClose": [
+          "next",
+          "next",
+          "next",
+          "getReturn",
+          "return"
+        ],
+        "prototypeRestored": true,
+        "shortExhaustion": [
+          "next0",
+          "next1"
+        ],
+        "shortMissingBindingsUndefined": true
+      },
+      "elisionDifferenceReproducer": "verification/pattern-binding/elision-difference.mjs",
+      "scope": "Planned actual138 frontier only. Pinned Bun additional value0 Get retained as ENGINE-ELISION-1; no baseline allowlist change. Custom iterator/prototype changes and native allocation/lexical/effect semantics are not formal source adequacy. Default standard-array protocol is the next implementation, not three index reads."
+    },
+    {
+      "id": "ENGINE-ELISION-1",
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "bun",
+      "version": "1.4.0",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 44,
+      "sourceSha256": "4bd90c878a3496b7a05edc1a3a90ba0e83afc24484b15acd1e600d5aff95a2a1",
+      "verified": false,
+      "nativeOnly": true,
+      "plannedFrontier": true,
+      "formalBindingTheorem": null,
+      "plainJavaScript": true,
+      "typescriptErasure": false,
+      "normal": {
+        "ok": true,
+        "result": {
+          "name": 1,
+          "matcher": 2
+        },
+        "events": [
+          "iterator",
+          "next0",
+          "value0",
+          "next1",
+          "value1",
+          "next2",
+          "value2",
+          "return"
+        ]
+      },
+      "throwing": {
+        "ok": false,
+        "message": "elided-value",
+        "events": [
+          "iterator",
+          "next0",
+          "value0"
+        ]
+      },
+      "referenceEdition": "ECMA-262 2025 Elision uses IteratorStep without IteratorValue",
+      "referenceUrl": "https://tc39.es/ecma262/2025/multipage/ecmascript-language-expressions.html#sec-iterator-destructuring-assignment-evaluation",
+      "interpretation": "Observed extra value0 Get is an outside-domain native discrepancy",
+      "baselineAllowlistChanged": false,
+      "scope": "Exact actual138 statement with custom iterator/result accessors; no general engine adequacy or default-DATA tuple counterexample. Preserve both native outcomes."
+    },
+    {
+      "id": "ENGINE-ELISION-1",
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "node",
+      "version": "22.22.2",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 44,
+      "sourceSha256": "4bd90c878a3496b7a05edc1a3a90ba0e83afc24484b15acd1e600d5aff95a2a1",
+      "verified": false,
+      "nativeOnly": true,
+      "plannedFrontier": true,
+      "formalBindingTheorem": null,
+      "plainJavaScript": true,
+      "typescriptErasure": false,
+      "normal": {
+        "ok": true,
+        "result": {
+          "name": 1,
+          "matcher": 2
+        },
+        "events": [
+          "iterator",
+          "next0",
+          "next1",
+          "value1",
+          "next2",
+          "value2",
+          "return"
+        ]
+      },
+      "throwing": {
+        "ok": true,
+        "result": {
+          "name": 1,
+          "matcher": 2
+        },
+        "events": [
+          "iterator",
+          "next0",
+          "next1",
+          "value1",
+          "next2",
+          "value2",
+          "return"
+        ]
+      },
+      "referenceEdition": "ECMA-262 2025 Elision uses IteratorStep without IteratorValue",
+      "referenceUrl": "https://tc39.es/ecma262/2025/multipage/ecmascript-language-expressions.html#sec-iterator-destructuring-assignment-evaluation",
+      "interpretation": "Observed skip agrees with selected edition",
+      "baselineAllowlistChanged": false,
+      "scope": "Exact actual138 statement with custom iterator/result accessors; no general engine adequacy or default-DATA tuple counterexample. Preserve both native outcomes."
+    }
+  ],
+  "recordedOn": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "bun": "1.4.0",
+    "node": "22.22.2",
+    "remoteCIObserved": false
+  },
+  "originalAssertionMessage": "elision read iterator result.value"
+}

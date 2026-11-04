@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "full": {
+      "firstLine": 158,
+      "lastLine": 160,
+      "startByte": 4838,
+      "endByteExclusive": 4940,
+      "sha256": "beff10a225df509ff6010efcaa6271d564693b14a5f1d683d90937170d7c023b",
+      "sourceCopy": "verification/capture-guard/full.ts.txt"
+    },
+    "guard": {
+      "firstLine": 158,
+      "lastLine": 158,
+      "startByte": 4838,
+      "endByteExclusive": 4888,
+      "sha256": "8058083e7eb8e5e6c6faaa3dd6930f7f2c27adf29afa4d53ff057af6c8d03ee1",
+      "sourceCopy": "verification/capture-guard/guard.ts.txt"
+    },
+    "assignment": {
+      "firstLine": 159,
+      "lastLine": 159,
+      "startByte": 4888,
+      "endByteExclusive": 4924,
+      "sha256": "cb7fd0f0be00c21a67357e0d3546bd74e01dd61cb8f1498a564d48da34f3ba56",
+      "sourceCopy": "verification/capture-guard/assignment.ts.txt"
+    },
+    "close": {
+      "firstLine": 160,
+      "lastLine": 160,
+      "startByte": 4924,
+      "endByteExclusive": 4940,
+      "sha256": "4382f25240112b6114e3d31588d56801605cf11b65ae073f94994a3bc0a98f31",
+      "sourceCopy": "verification/capture-guard/close.ts.txt"
+    }
+  },
+  "languageReference": "ECMA-262, 16th edition (2025)",
+  "sourceBoundary": "Complete original Object.hasOwn guard and indexed capture assignment158\u2013160; exact guard+assignment+close reassembly. Matcher.exec156 and enclosing if(m)/search are not included.",
+  "semanticBoundary": "Allocated ordinary params, primitive UTF16 name and standard frozen Object.hasOwn binding. An own descriptor skips without m readiness; absent own capture derives ordinary descriptor/prototype Set, including inherited legacy setter no-op and rejection. Actual m production and complete native/frontend/realm adequacy remain open.",
+  "formalCompleteSearchTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

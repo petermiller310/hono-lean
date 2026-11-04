@@ -1,0 +1,7 @@
+/.lake
+/.hono-cache/
+/.comparison-results/
+/.benchmark-results/
+__pycache__/
+/verification/node_modules/
+/.audit/

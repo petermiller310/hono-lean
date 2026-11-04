@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "sourceFragmentSha256": "f81b14a2daf91271162188b3cb1061728c7dedfdc5581a73eae01caa51c0f198",
+  "scope": "Native-only boundary evidence. Object-valued componentCount, getters and custom prototypes/methods are outside the formal primitive-numeric-index/own-data/frozen-method domain. Runtime differences are preserved, not classified as an in-domain Hono discrepancy or a proved engine-conformance defect.",
+  "reproducer": "verification/queue-schedule/boundary.mjs",
+  "observations": [
+    {
+      "runtime": "bun",
+      "version": "1.4.0",
+      "holesAndOwnUndefined": true,
+      "retainedReuse": true,
+      "getOnceAndPutShortCircuit": true,
+      "inheritedNumericTarget": true,
+      "arrayIndexBoundary": true,
+      "coercionEvents": [
+        "base",
+        "index",
+        "key",
+        "RHS"
+      ],
+      "pinnedCoercionEvents": [
+        "key",
+        "Get",
+        "Put"
+      ],
+      "redirectedKey": {
+        "events": [
+          "key",
+          "Get2",
+          "Put2"
+        ],
+        "coercions": 1,
+        "queueLength": 3,
+        "own3": false,
+        "targetIsSetterValue": true
+      },
+      "customPush": true
+    },
+    {
+      "runtime": "node",
+      "version": "22.22.2",
+      "holesAndOwnUndefined": true,
+      "retainedReuse": true,
+      "getOnceAndPutShortCircuit": true,
+      "inheritedNumericTarget": true,
+      "arrayIndexBoundary": true,
+      "coercionEvents": [
+        "base",
+        "index",
+        "key",
+        "RHS",
+        "key"
+      ],
+      "pinnedCoercionEvents": [
+        "key",
+        "Get",
+        "key",
+        "Put"
+      ],
+      "redirectedKey": {
+        "events": [
+          "key",
+          "Get2",
+          "key"
+        ],
+        "coercions": 2,
+        "queueLength": 4,
+        "own3": true,
+        "targetIsSetterValue": false
+      },
+      "customPush": true
+    }
+  ]
+}

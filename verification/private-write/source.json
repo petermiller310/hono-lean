@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "reset": {
+      "firstLine": 88,
+      "lastLine": 88,
+      "startByte": 2539,
+      "endByteExclusive": 2570,
+      "sha256": "9f81e8b0cb408a8680f18a02b03ff3bf13b2996460bf41e20bf0c3d5d747da80",
+      "whitespacePolicy": "Exact indentation and trailing LF retained"
+    },
+    "propagation": {
+      "firstLine": 109,
+      "lastLine": 109,
+      "startByte": 3163,
+      "endByteExclusive": 3205,
+      "sha256": "9a559697c45a7065f1c521c2a8fea4b7ee6e527125976daeb4a27cc01deb7734",
+      "whitespacePolicy": "Exact indentation and trailing LF retained"
+    },
+    "wildcard": {
+      "firstLine": 131,
+      "lastLine": 131,
+      "startByte": 4064,
+      "endByteExclusive": 4103,
+      "sha256": "c74bf83ef2ca5c2c78d788c197fae28893f47bae7f93638e8ee5d78b767083a0",
+      "whitespacePolicy": "Exact indentation and trailing LF retained"
+    },
+    "parameter": {
+      "firstLine": 202,
+      "lastLine": 202,
+      "startByte": 6310,
+      "endByteExclusive": 6347,
+      "sha256": "4a6a12c9332e95e96e5a60761ed021263bb4c191023ac0f0982f195aea516238",
+      "whitespacePolicy": "Exact indentation and trailing LF retained"
+    }
+  },
+  "containingMethod": {
+    "firstLine": 86,
+    "lastLine": 220,
+    "startByte": 2431,
+    "endByteExclusive": 6746,
+    "sha256": "d45f242595fbf9a87c05bdaf3e79b35951f48b8e31161822bc228993be8eaf2a",
+    "verificationStatus": "Provenance only; selected writes parse independently, not complete search control flow."
+  },
+  "sourceSubset": "Private DATA assignment, runtime this for reset, saved receiver/private identity before RHS, tagged PrivateSet after RHS.",
+  "controlFlowBoundary": "Literal-child propagation109 precedes selected call115. Writes131/202 are continuation branches; any later call uses a separate explicit activation, not a claimed contiguous202-to191 branch.",
+  "kindBoundary": "DATA/METHOD kind comes from tagged class installation, never from the stored Value or a desired output premise. Private accessors and full native language/heap adequacy remain open.",
+  "formalCompleteSearchTheorem": null,
+  "formalNativeActivationTheorem": null
+}

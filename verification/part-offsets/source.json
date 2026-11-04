@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "full": {
+      "firstLine": 146,
+      "lastLine": 154,
+      "startByte": 4427,
+      "endByteExclusive": 4765,
+      "sha256": "25d15d9b81bc22ba038dea387a703528896940949ae50f9f2f1163c0be9a65c9",
+      "sourceCopy": "verification/part-offsets/full.ts.txt"
+    },
+    "prepare": {
+      "firstLine": 146,
+      "lastLine": 153,
+      "startByte": 4427,
+      "endByteExclusive": 4703,
+      "sha256": "f1f36cc28363f5b24c0e66735ce8ae84d6f56a41accbc5aed4d620968e489f05",
+      "sourceCopy": "verification/part-offsets/prepare.ts.txt"
+    },
+    "slice": {
+      "firstLine": 154,
+      "lastLine": 154,
+      "startByte": 4703,
+      "endByteExclusive": 4765,
+      "sha256": "541ea994fcc4b550f93b613dec70f6ed5939265118aaa2e1c629a657060d8f50",
+      "sourceCopy": "verification/part-offsets/slice.ts.txt"
+    }
+  },
+  "languageReference": "ECMA-262, 16th edition (2025)",
+  "sourceBoundary": "Complete original lazy if/counted-for/indexed writes/+ and += operators/slice declaration;338=276+62 checked reassembly. Earlier splitPath/startup are separate pinned proof dependencies; matcher.exec156 and containing search are not included.",
+  "semanticBoundary": "Initial primitive UTF16 path, actual dense string parts/saved bounds, outer cache binding and integer-specialized arithmetic with explicit native exactness/array/resource premises. Fresh table derived by actual source loop; truthy cache reused without repair. Correct suffix needs proved split alignment/no-truncation or a source-produced cache, never an assumed desired output.",
+  "supportingSourceChecks": [
+    "verification/splitpath/source.py",
+    "verification/search-setup/source.py"
+  ],
+  "formalCompleteSearchTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

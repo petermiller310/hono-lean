@@ -1,0 +1,2 @@
+    const len = parts.length
+    let partOffsets: number[] | null = null

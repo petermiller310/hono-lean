@@ -1,0 +1,12 @@
+{
+  "name": "hono-lean-verification-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "inventory": "node inventory.mjs",
+    "test": "node --test tests/inventory.test.mjs"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragment": {
+    "firstLine": 106,
+    "lastLine": 119,
+    "startByte": 3092,
+    "endByteExclusive": 3583,
+    "sha256": "8b66b71dc94881b830c28048f769a5f97bd3924ca2e760e787c549974e263e48",
+    "whitespacePolicy": "Exact indentation and trailing LF retained"
+  },
+  "sourceSubset": "Fresh lexical declaration; nested if/else; private DATA propagation; private helper calls; dense array push.",
+  "controlFlowBoundary": "The source node selection105 and isLast derivation101 are entry premises. The declaration remains in its enclosing for-j scope. Outer search loops, path reachability, nonliteral branches and complete native-language adequacy remain open.",
+  "aliasBoundary": "The optional wildcard call precedes the direct call. Collector entries retain live handler references; a later reset of a shared handler affects earlier aliases.",
+  "formalCompleteSearchTheorem": null,
+  "formalNativeActivationTheorem": null
+}

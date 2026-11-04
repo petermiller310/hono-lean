@@ -1,0 +1,2 @@
+              for (const _ in child.#children) {
+                child.#params = params

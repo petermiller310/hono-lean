@@ -1,0 +1,15 @@
+        const node = curNodes[j]
+        const nextNode = node.#children[part]
+
+        if (nextNode) {
+          nextNode.#params = node.#params
+          if (isLast) {
+            // '/hello/*' => match '/hello'
+            if (nextNode.#children['*']) {
+              this.#pushHandlerSets(handlerSets, nextNode.#children['*'], method, node.#params)
+            }
+            this.#pushHandlerSets(handlerSets, nextNode, method, node.#params)
+          } else {
+            tempNodes.push(nextNode)
+          }
+        }

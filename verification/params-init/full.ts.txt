@@ -1,0 +1,1 @@
+          const params = node.#params === emptyParams ? {} : { ...node.#params }

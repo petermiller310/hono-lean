@@ -1,0 +1,28 @@
+name = "HonoLean"
+version = "0.1.0"
+defaultTargets = ["hono-lean", "hono-lean-json", "adapter-tests", "router-bench"]
+
+[leanOptions]
+warningAsError = true
+
+[[lean_lib]]
+name = "HonoLean"
+
+[[lean_lib]]
+name = "HonoLeanUpstream"
+
+[[lean_exe]]
+name = "hono-lean"
+root = "Main"
+
+[[lean_exe]]
+name = "hono-lean-json"
+root = "JsonMain"
+
+[[lean_exe]]
+name = "adapter-tests"
+root = "AdapterTests"
+
+[[lean_exe]]
+name = "router-bench"
+root = "BenchMain"

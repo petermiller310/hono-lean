@@ -1,0 +1,9 @@
+{
+  "seed": 1729,
+  "routes": 64,
+  "queries": 32,
+  "warmupSamples": 3,
+  "samples": 7,
+  "buildIterations": 16,
+  "lookupIterations": 4096
+}

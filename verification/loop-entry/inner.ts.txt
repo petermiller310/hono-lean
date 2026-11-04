@@ -1,0 +1,1 @@
+      for (let j = 0, len2 = curNodes.length; j < len2; j++) {

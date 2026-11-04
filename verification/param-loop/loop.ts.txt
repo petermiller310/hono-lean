@@ -1,0 +1,7 @@
+        handlerSet.params = createNullObject()
+        handlerSets.push(handlerSet)
+        for (let i = 0, len = handlerSet.possibleKeys.length; i < len; i++) {
+          const key = handlerSet.possibleKeys[i]
+          handlerSet.params[key] =
+            params?.[key] && !i ? params[key] : (nodeParams[key] ?? params?.[key])
+        }

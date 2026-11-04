@@ -1,0 +1,2 @@
+const emptyParams = createNullObject()
+let order = 0

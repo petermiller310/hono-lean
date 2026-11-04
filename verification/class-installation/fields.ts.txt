@@ -1,0 +1,6 @@
+  #methods: Record<string, HandlerSet<T>>[] = []
+
+  #children: Record<string, Node<T>> = createNullObject()
+  #patterns: Node<T>[] = []
+  #pattern?: Pattern | string
+  #params: Record<string, string> = emptyParams

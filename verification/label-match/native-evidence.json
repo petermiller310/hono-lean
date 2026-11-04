@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "ENGINE-FLAGS-1",
+  "verified": false,
+  "nativeOnly": true,
+  "plannedFrontier": true,
+  "formalNativeAdequacyTheorem": null,
+  "baselineAllowlistChanged": false,
+  "records": [
+    {
+      "id": "ENGINE-FLAGS-1",
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "bun",
+      "version": "1.4.0",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 59,
+      "sourceSha256": "e1a741ae801aec83c5926a9d2b71e0b2a6dce9ee29406ef602a8d54a862d0207",
+      "plainJavaScript": true,
+      "typescriptErasure": false,
+      "verified": false,
+      "nativeOnly": true,
+      "instrumented": true,
+      "control": {
+        "values": [
+          {
+            "kind": "string",
+            "value": ":id"
+          },
+          {
+            "kind": "string",
+            "value": "id"
+          },
+          {
+            "kind": "undefined"
+          }
+        ],
+        "own2": true,
+        "ownNames": [
+          "0",
+          "1",
+          "2",
+          "length",
+          "index",
+          "input",
+          "groups"
+        ],
+        "index": 0,
+        "input": ":id",
+        "ownGroups": true,
+        "groupsUndefined": true
+      },
+      "events": [
+        "getStringMatch",
+        "callStringMatch",
+        "installOwnFlags",
+        "getSymbolMatch",
+        "callSymbolMatch",
+        "getOwnFlags"
+      ],
+      "outcome": {
+        "ok": false,
+        "message": "own-flags-read"
+      },
+      "prototypesRestored": true,
+      "baselineAllowlistChanged": false,
+      "reference": "https://tc39.es/ecma262/2025/multipage/text-processing.html#sec-regexp.prototype-@@match",
+      "scope": "Exact source with current String.match wrapper poisoning only the fresh literal own flags. Bun reads flags per selected 2025 edition; pinned Node uses direct global. Native-only boundary outside the standard realm; no normal-output/source-model counterexample or native protocol theorem."
+    },
+    {
+      "id": "ENGINE-FLAGS-1",
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "node",
+      "version": "22.22.2",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 59,
+      "sourceSha256": "e1a741ae801aec83c5926a9d2b71e0b2a6dce9ee29406ef602a8d54a862d0207",
+      "plainJavaScript": true,
+      "typescriptErasure": false,
+      "verified": false,
+      "nativeOnly": true,
+      "instrumented": true,
+      "control": {
+        "values": [
+          {
+            "kind": "string",
+            "value": ":id"
+          },
+          {
+            "kind": "string",
+            "value": "id"
+          },
+          {
+            "kind": "undefined"
+          }
+        ],
+        "own2": true,
+        "ownNames": [
+          "0",
+          "1",
+          "2",
+          "length",
+          "index",
+          "input",
+          "groups"
+        ],
+        "index": 0,
+        "input": ":id",
+        "ownGroups": true,
+        "groupsUndefined": true
+      },
+      "events": [
+        "getStringMatch",
+        "callStringMatch",
+        "installOwnFlags",
+        "getSymbolMatch",
+        "callSymbolMatch",
+        "getGlobal",
+        "getExec",
+        "callExec"
+      ],
+      "outcome": {
+        "ok": true,
+        "result": {
+          "values": [
+            {
+              "kind": "string",
+              "value": ":id"
+            },
+            {
+              "kind": "string",
+              "value": "id"
+            },
+            {
+              "kind": "undefined"
+            }
+          ],
+          "own2": true,
+          "ownNames": [
+            "0",
+            "1",
+            "2",
+            "length",
+            "index",
+            "input",
+            "groups"
+          ],
+          "index": 0,
+          "input": ":id",
+          "ownGroups": true,
+          "groupsUndefined": true
+        }
+      },
+      "prototypesRestored": true,
+      "baselineAllowlistChanged": false,
+      "reference": "https://tc39.es/ecma262/2025/multipage/text-processing.html#sec-regexp.prototype-@@match",
+      "scope": "Exact source with current String.match wrapper poisoning only the fresh literal own flags. Bun reads flags per selected 2025 edition; pinned Node uses direct global. Native-only boundary outside the standard realm; no normal-output/source-model counterexample or native protocol theorem."
+    }
+  ]
+}

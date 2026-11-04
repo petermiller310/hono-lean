@@ -1,0 +1,3 @@
+      const part: string = parts[i]
+      const isLast = i === len - 1
+      const tempNodes: Node<T>[] = []

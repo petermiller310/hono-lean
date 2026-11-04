@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/utils/url.ts",
+  "sourceGitBlob": "201383736f2531bf626427957e896b8fcc816ccf",
+  "sourceSha256": "d1f85f414ed8fd3682000499e74e8723139810fd612e1e1a1b4075a52ef91248",
+  "fragments": {
+    "full": {
+      "firstLine": 68,
+      "lastLine": 68,
+      "startByte": 1733,
+      "endByteExclusive": 1779,
+      "sha256": "b70aef226ab3fc4a7ec886b9d64dbace87107beb4989920d05b48f6bd6b86560",
+      "sourceCopy": "verification/pattern-construct/full.ts.txt"
+    },
+    "constructor": {
+      "firstLine": 68,
+      "lastLine": 68,
+      "startByte": 1751,
+      "endByteExclusive": 1778,
+      "sha256": "e242febcd54382c8ec740fa0ebf010a1992290e980475f709cbeb7117759e571",
+      "sourceCopy": "verification/pattern-construct/constructor.ts.txt"
+    },
+    "line": {
+      "firstLine": 68,
+      "lastLine": 68,
+      "startByte": 1719,
+      "endByteExclusive": 1780,
+      "sha256": "3c6f870d1856364a2beb399570d2546e3370927dbe644b68b644eb102f51afec",
+      "sourceCopy": "verification/pattern-construct/line.ts.txt"
+    }
+  },
+  "languageReference": "ECMA-262, 16th edition (2025)",
+  "sourceBoundary": "Actual46B selected terminal tuple expression and contained27B NewExpression; full61B line retains surrounding colon only as identity context. Not the enclosing65-68 conditional, cache assignment or complete getPattern.",
+  "semanticBoundary": "Retained template/New/array AST, current constructor identity and actual dense match1/name match2/body reads. Derive fresh tuple and regex ordinary cell/lastIndex plus genuine parsed compiled internal record, preserving evaluation/allocation order. Standard constructor/prototype/newTarget interpretation remains explicit. No supplied branded record/compiled result/tuple input.",
+  "formalCompleteGetPatternTheorem": null,
+  "formalCompleteSearchTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

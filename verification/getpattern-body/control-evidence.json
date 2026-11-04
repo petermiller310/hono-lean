@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "verified": false,
+  "nativeOnly": true,
+  "formalFunctionInvocationTheorem": null,
+  "formalModuleTheorem": null,
+  "records": [
+    {
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "bun",
+      "version": "1.4.0",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 576,
+      "sourceSha256": "f72f8a61edff659809d83048b3b8861b2baf00885682c86943e4e55fdedc7419",
+      "verified": false,
+      "nativeOnly": true,
+      "observerVerified": false,
+      "actualModuleProbe": true,
+      "typescriptLoadingVerified": false,
+      "formalFunctionInvocationTheorem": null,
+      "formalModuleTheorem": null,
+      "baselineAllowlistChanged": false,
+      "results": [
+        {
+          "id": "wildcard-skips-all-effects",
+          "value": "*",
+          "trace": [],
+          "cacheOwnKeys": []
+        },
+        {
+          "id": "strict-comparison-does-not-coerce-object-label",
+          "value": null,
+          "trace": [
+            "label-match"
+          ]
+        },
+        {
+          "id": "actual-pinned-bun-module-wildcard",
+          "first": "*",
+          "second": "*",
+          "trace": [],
+          "typescriptLoadingVerified": false,
+          "formalInvocationTheorem": null
+        }
+      ]
+    },
+    {
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "node",
+      "version": "22.22.2",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 576,
+      "sourceSha256": "f72f8a61edff659809d83048b3b8861b2baf00885682c86943e4e55fdedc7419",
+      "verified": false,
+      "nativeOnly": true,
+      "observerVerified": false,
+      "actualModuleProbe": false,
+      "typescriptLoadingVerified": false,
+      "formalFunctionInvocationTheorem": null,
+      "formalModuleTheorem": null,
+      "baselineAllowlistChanged": false,
+      "results": [
+        {
+          "id": "wildcard-skips-all-effects",
+          "value": "*",
+          "trace": [],
+          "cacheOwnKeys": []
+        },
+        {
+          "id": "strict-comparison-does-not-coerce-object-label",
+          "value": null,
+          "trace": [
+            "label-match"
+          ]
+        }
+      ]
+    }
+  ]
+}

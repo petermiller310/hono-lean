@@ -1,0 +1,1 @@
+const patternCache: { [key: string]: Pattern } = {}

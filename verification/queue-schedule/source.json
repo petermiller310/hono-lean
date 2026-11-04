@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/honojs/hono.git",
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragment": {
+    "firstLine": 177,
+    "lastLine": 178,
+    "startByte": 5546,
+    "endByteExclusive": 5667,
+    "sha256": "f81b14a2daf91271162188b3cb1061728c7dedfdc5581a73eae01caa51c0f198",
+    "sourceCopy": "verification/queue-schedule/source.ts.txt"
+  },
+  "consumer": {
+    "sourceMetadata": "verification/queue-advance/source.json",
+    "firstLine": 209,
+    "lastLine": 210,
+    "startByte": 6428,
+    "endByteExclusive": 6537,
+    "sha256": "c24807d3575aeca85813064c40bb8b44ca1287699c984e081847bb8ed45a3e8e",
+    "sourceCopy": "verification/queue-advance/source.ts.txt"
+  },
+  "languageReference": "ECMA-262 16th edition (2025)",
+  "parserBoundary": "Separate original logical-assignment initializer AST and indexed sequence entry; shared lexer adds only adjacent ||= maximal munch. Older Expr/Stmt/State/AssignmentReference types and parser admission remain unchanged.",
+  "semanticBoundary": "Actual sparse own-index presence and length, numeric array-index specialization, short-circuit RHS allocation and saved-reference write, then current target push including aliases. Hole erasure is read-value observation only; no own-presence equality, general key coercion, inherited/accessor/proxy/species/native adequacy or preceding regexp/count/for-in/full-body claim.",
+  "formalCompleteLoopTheorem": null,
+  "formalCompleteSearchTheorem": null
+}

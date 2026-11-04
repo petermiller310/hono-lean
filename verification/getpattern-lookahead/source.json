@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/utils/url.ts",
+  "sourceGitBlob": "201383736f2531bf626427957e896b8fcc816ccf",
+  "sourceSha256": "d1f85f414ed8fd3682000499e74e8723139810fd612e1e1a1b4075a52ef91248",
+  "checkedPinnedBlobs": 315,
+  "fragments": {
+    "constructor": {
+      "firstLine": 67,
+      "lastLine": 67,
+      "startByte": 1679,
+      "endByteExclusive": 1717,
+      "sha256": "b1414ae969810ebcf84d2786a02dc8fdd4f62e5e2fd5c1e40cbc60266f0040de",
+      "sourceCopy": "verification/getpattern-lookahead/constructor.ts.txt"
+    },
+    "tuple": {
+      "firstLine": 67,
+      "lastLine": 67,
+      "startByte": 1658,
+      "endByteExclusive": 1718,
+      "sha256": "a7b7bf89759e05f0d350327d7f73534a2f79c9b0ee7b845369ef235ec65faae8",
+      "sourceCopy": "verification/getpattern-lookahead/tuple.ts.txt"
+    },
+    "line": {
+      "firstLine": 67,
+      "lastLine": 67,
+      "startByte": 1644,
+      "endByteExclusive": 1719,
+      "sha256": "ee30569e15fe6a07bba31f61a69d2c98d921beac537c0f9fdfdbcc0dfe2ebaac",
+      "sourceCopy": "verification/getpattern-lookahead/line.ts.txt"
+    },
+    "label-declaration": {
+      "firstLine": 60,
+      "lastLine": 60,
+      "startByte": 1387,
+      "endByteExclusive": 1446,
+      "sha256": "e1a741ae801aec83c5926a9d2b71e0b2a6dce9ee29406ef602a8d54a862d0207",
+      "sourceCopy": "verification/getpattern-lookahead/label-declaration.ts.txt"
+    },
+    "key-declaration": {
+      "firstLine": 62,
+      "lastLine": 62,
+      "startByte": 1461,
+      "endByteExclusive": 1501,
+      "sha256": "89a934a4062f8abd48d7c094eb8e8b6ce76e260e3b3ac5d5329275558acf30b9",
+      "sourceCopy": "verification/getpattern-lookahead/key-declaration.ts.txt"
+    }
+  },
+  "reusedCompleteBody": {
+    "sourceMetadata": "verification/getpattern-body/source.json",
+    "startByte": 1344,
+    "endByteExclusive": 1920,
+    "sha256": "f72f8a61edff659809d83048b3b8861b2baf00885682c86943e4e55fdedc7419"
+  },
+  "sourceBoundary": "Actual38B constructor/60B tuple/75B line67 plus original60/62 declarations. Kernel source connection projects their real nodes from the already checked complete576B body AST; the fragments are not fabricated standalone conditional statements.",
+  "semanticBoundary": "Selected actual60\u219262\u219267 expression composition and produced matcher semantics are separate proof obligations. Ancestor guards and branch reachability are NOT executed by this projection; full cache guards/Set/74 return and lexical-closure integration follow in the next checkpoint. Identity, native/type-erasure/module and general regex adequacy are not established by this checker.",
+  "formalCompleteGetPatternTheorem": null,
+  "formalCompleteCacheOrClosureTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/utils/url.ts",
+  "sourceGitBlob": "201383736f2531bf626427957e896b8fcc816ccf",
+  "sourceSha256": "d1f85f414ed8fd3682000499e74e8723139810fd612e1e1a1b4075a52ef91248",
+  "fragments": {
+    "full": {
+      "firstLine": 60,
+      "lastLine": 77,
+      "startByte": 1387,
+      "endByteExclusive": 1920,
+      "sha256": "0ce62880eb018a718c7d3f32bb413e31bf5b8c42e31bba1e289d280529a47cf5",
+      "sourceCopy": "verification/getpattern-cache/full.ts.txt"
+    },
+    "block": {
+      "firstLine": 62,
+      "lastLine": 74,
+      "startByte": 1461,
+      "endByteExclusive": 1901,
+      "sha256": "6708db3236d21830f5b739727a68a100a8125297ee4deb25c5f4b3bcea77ab18",
+      "sourceCopy": "verification/getpattern-cache/block.ts.txt"
+    },
+    "init": {
+      "firstLine": 50,
+      "lastLine": 50,
+      "startByte": 1127,
+      "endByteExclusive": 1179,
+      "sha256": "aaf509b80f7785784036948ed957b7a94474fad18696c5e597b0175cef1016e9",
+      "sourceCopy": "verification/getpattern-cache/init.ts.txt"
+    },
+    "key": {
+      "firstLine": 62,
+      "lastLine": 62,
+      "startByte": 1461,
+      "endByteExclusive": 1501,
+      "sha256": "89a934a4062f8abd48d7c094eb8e8b6ce76e260e3b3ac5d5329275558acf30b9",
+      "sourceCopy": "verification/getpattern-cache/key.ts.txt"
+    },
+    "guard": {
+      "firstLine": 63,
+      "lastLine": 63,
+      "startByte": 1501,
+      "endByteExclusive": 1536,
+      "sha256": "562e32bef0c8e0debedf1aeefcc22c8be47ab28f8e91d36a2f8077859097ed41",
+      "sourceCopy": "verification/getpattern-cache/guard.ts.txt"
+    },
+    "plain": {
+      "firstLine": 70,
+      "lastLine": 70,
+      "startByte": 1795,
+      "endByteExclusive": 1852,
+      "sha256": "dbb535ec755ec4c66e8531ce131390c8e1eb92e1fe726849a63b2dc52995d8a8",
+      "sourceCopy": "verification/getpattern-cache/plain.ts.txt"
+    },
+    "return": {
+      "firstLine": 74,
+      "lastLine": 74,
+      "startByte": 1867,
+      "endByteExclusive": 1901,
+      "sha256": "3d1ef78b356ccf189815aaba544c5b17f92b24009546099a1993aebfb20bcfd9",
+      "sourceCopy": "verification/getpattern-cache/return.ts.txt"
+    }
+  },
+  "languageReference": "ECMA-262, 16th edition (2025)",
+  "sourceBoundary": "Complete actual533B post-wildcard body60-77 and actual52B typedcache50 allocation; full nested440B62-74 including real67 lookahead, not fabricated branch bodies. Wildcard guard56-58, function/module closure/bootstrap and complete getPattern/native adequacy remain separate.",
+  "semanticBoundary": "Actual source60 label producer supplies match/null; real multi-substitution rawUTF16 key template, current ordinary lookup/truthiness/strict Set and SECOND current return Get. Persistent cache identity across activations. Warm hits need no cold constructor/readiness or Pattern tuple premise; cold plain70 and supported terminal68 construction derive fresh tuple from computed match. Reached cold67 lookahead remains explicit model frontier until genuinely implemented.",
+  "nativeBoundary": "Existing exact two-order native cache records stay byte unchanged: Bun TypeScript loading unverified, private cache/key not instrumented, no formal full-cache/full-router/native theorem or D1 allowance. New plain selected-source observations keep wrappers/JSON/realm/frontend/engine interpretation open.",
+  "formalCompleteGetPatternTheorem": null,
+  "formalCompleteSearchTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

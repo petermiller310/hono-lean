@@ -1,0 +1,7 @@
+{
+      [method]: {
+        handler,
+        possibleKeys: [...possibleKeys],
+        score: ++order,
+      },
+    }

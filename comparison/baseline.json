@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/honojs/hono.git",
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "router": "TrieRouter",
+  "bunVersion": "1.4.0",
+  "seed": 1729,
+  "generatedScenarios": 32,
+  "parameterNames": ["id", "studentId", "kind", "worksheetId", "constructor"]
+}

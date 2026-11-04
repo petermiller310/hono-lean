@@ -1,0 +1,297 @@
+{
+  "fixtureVersion": 1,
+  "baseline": {"repository": "https://github.com/honojs/hono", "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52", "router": "TrieRouter"},
+  "notes": [
+    "Expected is the normative hono-lean result. These examples are not proofs.",
+    "baselineExpected records one exact pinned-Hono difference; it does not weaken expected.",
+    "Each scenario starts with a fresh router; initial routes assign zero-based ordinals.",
+    "Retained lookup results must still equal their expected values after later steps.",
+    "Rejected inputs are adapter requirements; Hono may accept inputs outside this domain."
+  ],
+  "scenarios": [
+    {
+      "id": "empty-table",
+      "why": "No registrations means no matches, including at the root.",
+      "routes": [
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/"}, "expected": []},
+        {"op": "lookup", "request": {"method": "POST", "path": "/students"}, "expected": []}
+      ]
+    },
+    {
+      "id": "root-is-exact",
+      "why": "The root is an empty path, not a catch-all.",
+      "routes": [
+        {"method": "GET", "pattern": "/", "handler": "root"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/"}, "expected": [{"registration": 0, "handler": "root", "params": {}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students"}, "expected": []},
+        {"op": "lookup", "request": {"method": "POST", "path": "/"}, "expected": []}
+      ]
+    },
+    {
+      "id": "literal-is-whole-path",
+      "why": "Exact paths do not match shorter or longer paths.",
+      "routes": [
+        {"method": "GET", "pattern": "/students/new", "handler": "new"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/new"}, "expected": [{"registration": 0, "handler": "new", "params": {}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students"}, "expected": []},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/new/extra"}, "expected": []},
+        {"op": "lookup", "request": {"method": "GET", "path": "/Students/new"}, "expected": []}
+      ]
+    },
+    {
+      "id": "overlap-keeps-all-matches",
+      "why": "A literal does not suppress a parameter or wildcard match.",
+      "routes": [
+        {"method": "ALL", "pattern": "/students/*", "handler": "log"},
+        {"method": "GET", "pattern": "/students/:id", "handler": "read"},
+        {"method": "GET", "pattern": "/students/new", "handler": "new"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/new"}, "expected": [{"registration": 0, "handler": "log", "params": {}}, {"registration": 1, "handler": "read", "params": {"id": "new"}}, {"registration": 2, "handler": "new", "params": {}}]},
+        {"op": "lookup", "request": {"method": "POST", "path": "/students/new"}, "expected": [{"registration": 0, "handler": "log", "params": {}}]},
+        {"op": "lookup", "request": {"method": "HEAD", "path": "/students/new"}, "expected": [{"registration": 0, "handler": "log", "params": {}}]}
+      ]
+    },
+    {
+      "id": "order-follows-registration",
+      "why": "Traversal specificity cannot reorder registrations.",
+      "routes": [
+        {"method": "GET", "pattern": "/students/new", "handler": "new"},
+        {"method": "ALL", "pattern": "/students/*", "handler": "log"},
+        {"method": "GET", "pattern": "/students/:id", "handler": "read"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/new"}, "expected": [{"registration": 0, "handler": "new", "params": {}}, {"registration": 1, "handler": "log", "params": {}}, {"registration": 2, "handler": "read", "params": {"id": "new"}}]}
+      ]
+    },
+    {
+      "id": "multiple-captures",
+      "why": "Each parameter binds one segment under its own name.",
+      "routes": [
+        {"method": "GET", "pattern": "/students/:studentId/worksheets/:worksheetId", "handler": "worksheet"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1/worksheets/w2"}, "expected": [{"registration": 0, "handler": "worksheet", "params": {"studentId": "s1", "worksheetId": "w2"}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1/worksheets"}, "expected": []},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1/worksheets/w2/extra"}, "expected": []}
+      ]
+    },
+    {
+      "id": "same-shape-different-names",
+      "why": "Routes may share a shape without sharing capture names.",
+      "routes": [
+        {"method": "GET", "pattern": "/students/:studentId", "handler": "student"},
+        {"method": "GET", "pattern": "/students/:id", "handler": "shortName"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1"}, "expected": [{"registration": 0, "handler": "student", "params": {"studentId": "s1"}}, {"registration": 1, "handler": "shortName", "params": {"id": "s1"}}]}
+      ]
+    },
+    {
+      "id": "branch-capture-isolation",
+      "why": "A general branch cannot leak keys into a literal branch.",
+      "routes": [
+        {"method": "GET", "pattern": "/:kind/:id", "handler": "general"},
+        {"method": "GET", "pattern": "/students/:studentId", "handler": "student"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1"}, "expected": [{"registration": 0, "handler": "general", "params": {"kind": "students", "id": "s1"}}, {"registration": 1, "handler": "student", "params": {"studentId": "s1"}}]}
+      ]
+    },
+    {
+      "id": "duplicate-registrations",
+      "why": "Repeated labels and patterns remain separate occurrences.",
+      "routes": [
+        {"method": "GET", "pattern": "/students/:id", "handler": "same"},
+        {"method": "GET", "pattern": "/students/:id", "handler": "same"},
+        {"method": "ALL", "pattern": "/students/*", "handler": "same"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1"}, "expected": [{"registration": 0, "handler": "same", "params": {"id": "s1"}}, {"registration": 1, "handler": "same", "params": {"id": "s1"}}, {"registration": 2, "handler": "same", "params": {}}]}
+      ]
+    },
+    {
+      "id": "methods-and-all",
+      "why": "ALL adds a match; it does not replace an exact method match.",
+      "routes": [
+        {"method": "ALL", "pattern": "/students", "handler": "all"},
+        {"method": "GET", "pattern": "/students", "handler": "get"},
+        {"method": "HEAD", "pattern": "/students", "handler": "head"},
+        {"method": "OPTIONS", "pattern": "/students", "handler": "options"},
+        {"method": "PURGE", "pattern": "/students", "handler": "purge"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students"}, "expected": [{"registration": 0, "handler": "all", "params": {}}, {"registration": 1, "handler": "get", "params": {}}]},
+        {"op": "lookup", "request": {"method": "HEAD", "path": "/students"}, "expected": [{"registration": 0, "handler": "all", "params": {}}, {"registration": 2, "handler": "head", "params": {}}]},
+        {"op": "lookup", "request": {"method": "OPTIONS", "path": "/students"}, "expected": [{"registration": 0, "handler": "all", "params": {}}, {"registration": 3, "handler": "options", "params": {}}]},
+        {"op": "lookup", "request": {"method": "PURGE", "path": "/students"}, "expected": [{"registration": 0, "handler": "all", "params": {}}, {"registration": 4, "handler": "purge", "params": {}}]},
+        {"op": "lookup", "request": {"method": "POST", "path": "/students"}, "expected": [{"registration": 0, "handler": "all", "params": {}}]}
+      ]
+    },
+    {
+      "id": "no-head-fallback",
+      "why": "Raw router matching does not apply the HTTP application HEAD fallback.",
+      "routes": [
+        {"method": "GET", "pattern": "/students", "handler": "get"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "HEAD", "path": "/students"}, "expected": []},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students"}, "expected": [{"registration": 0, "handler": "get", "params": {}}]}
+      ]
+    },
+    {
+      "id": "terminal-wildcard",
+      "why": "A wildcard accepts an empty suffix, but still requires its whole prefix.",
+      "routes": [
+        {"method": "GET", "pattern": "/students/*", "handler": "prefix"},
+        {"method": "GET", "pattern": "/students", "handler": "exact"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students"}, "expected": [{"registration": 0, "handler": "prefix", "params": {}}, {"registration": 1, "handler": "exact", "params": {}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1/worksheets"}, "expected": [{"registration": 0, "handler": "prefix", "params": {}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/studentship"}, "expected": []},
+        {"op": "lookup", "request": {"method": "GET", "path": "/"}, "expected": []}
+      ]
+    },
+    {
+      "id": "global-wildcard-aliases",
+      "why": "Both global wildcard spellings match the root and longer paths.",
+      "routes": [
+        {"method": "GET", "pattern": "*", "handler": "bare"},
+        {"method": "GET", "pattern": "/*", "handler": "slash"},
+        {"method": "GET", "pattern": "/", "handler": "root"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/"}, "expected": [{"registration": 0, "handler": "bare", "params": {}}, {"registration": 1, "handler": "slash", "params": {}}, {"registration": 2, "handler": "root", "params": {}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1"}, "expected": [{"registration": 0, "handler": "bare", "params": {}}, {"registration": 1, "handler": "slash", "params": {}}]},
+        {"op": "lookup", "request": {"method": "POST", "path": "/"}, "expected": []}
+      ]
+    },
+    {
+      "id": "parameter-before-wildcard",
+      "why": "The parameter must consume a segment even when the suffix may be empty.",
+      "routes": [
+        {"method": "GET", "pattern": "/students/:id/*", "handler": "student"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students"}, "expected": []},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1"}, "expected": [{"registration": 0, "handler": "student", "params": {"id": "s1"}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1/worksheets/w2"}, "expected": [{"registration": 0, "handler": "student", "params": {"id": "s1"}}]}
+      ]
+    },
+    {
+      "id": "parameter-needs-one-segment",
+      "why": "A parameter matches exactly one segment, never zero or two.",
+      "routes": [
+        {"method": "GET", "pattern": "/:id", "handler": "one"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/"}, "expected": []},
+        {"op": "lookup", "request": {"method": "GET", "path": "/s1"}, "expected": [{"registration": 0, "handler": "one", "params": {"id": "s1"}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/s1/extra"}, "expected": []}
+      ]
+    },
+    {
+      "id": "literal-keys-are-data",
+      "why": "Letters, digits, hyphens, underscores, and JavaScript object-key spellings are literal data.",
+      "routes": [
+        {"method": "GET", "pattern": "/grade_2/skill-7", "handler": "skill"},
+        {"method": "GET", "pattern": "/constructor/__proto__", "handler": "keys"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/grade_2/skill-7"}, "expected": [{"registration": 0, "handler": "skill", "params": {}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/constructor/__proto__"}, "expected": [{"registration": 1, "handler": "keys", "params": {}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/grade_2/Skill-7"}, "expected": []}
+      ]
+    },
+    {
+      "id": "parameter-name-is-data",
+      "why": "D1: the parameter name __proto__ must still capture a string.",
+      "routes": [
+        {"method": "GET", "pattern": "/:__proto__", "handler": "capture"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/alpha"}, "expected": [{"registration": 0, "handler": "capture", "params": {"__proto__": "alpha"}}], "baselineDifference": "D1", "baselineExpected": [{"registration": 0, "handler": "capture", "params": {"__proto__": {}}}]}
+      ]
+    },
+    {
+      "id": "empty-handler-label",
+      "why": "Labels are opaque payloads, so an empty label is preserved.",
+      "routes": [
+        {"method": "GET", "pattern": "/students", "handler": ""}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students"}, "expected": [{"registration": 0, "handler": "", "params": {}}]}
+      ]
+    },
+    {
+      "id": "request-and-registration-sequence",
+      "why": "Lookups are isolated, and later registrations append without overwriting.",
+      "routes": [
+        {"method": "GET", "pattern": "/students/:id", "handler": "read"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1"}, "expected": [{"registration": 0, "handler": "read", "params": {"id": "s1"}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s2"}, "expected": [{"registration": 0, "handler": "read", "params": {"id": "s2"}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/missing"}, "expected": []},
+        {"op": "register", "route": {"method": "POST", "pattern": "/students/:id", "handler": "write"}, "expectedRegistration": 1},
+        {"op": "lookup", "request": {"method": "POST", "path": "/students/s3"}, "expected": [{"registration": 1, "handler": "write", "params": {"id": "s3"}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s3"}, "expected": [{"registration": 0, "handler": "read", "params": {"id": "s3"}}]},
+        {"op": "register", "route": {"method": "GET", "pattern": "/students/:id", "handler": "read"}, "expectedRegistration": 2},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s4"}, "expected": [{"registration": 0, "handler": "read", "params": {"id": "s4"}}, {"registration": 2, "handler": "read", "params": {"id": "s4"}}]}
+      ]
+    },
+    {
+      "id": "overlapping-wildcard-prefixes",
+      "why": "Root, ancestor, parameter, and descendant matches retain one global registration order.",
+      "routes": [
+        {"method": "GET", "pattern": "/students/:id/worksheets/*", "handler": "worksheets"},
+        {"method": "GET", "pattern": "*", "handler": "global"},
+        {"method": "GET", "pattern": "/students/*", "handler": "students"},
+        {"method": "GET", "pattern": "/students/:id/*", "handler": "student"}
+      ],
+      "steps": [
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1/worksheets"}, "expected": [{"registration": 0, "handler": "worksheets", "params": {"id": "s1"}}, {"registration": 1, "handler": "global", "params": {}}, {"registration": 2, "handler": "students", "params": {}}, {"registration": 3, "handler": "student", "params": {"id": "s1"}}]},
+        {"op": "lookup", "request": {"method": "GET", "path": "/students/s1"}, "expected": [{"registration": 1, "handler": "global", "params": {}}, {"registration": 2, "handler": "students", "params": {}}, {"registration": 3, "handler": "student", "params": {"id": "s1"}}]}
+      ]
+    }
+  ],
+  "rejected": [
+    {"id": "optional-parameter", "target": "route", "input": {"method": "GET", "pattern": "/students/:id?", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "regex-parameter", "target": "route", "input": {"method": "GET", "pattern": "/students/:id{[0-9]+}", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "prefix-wildcard", "target": "route", "input": {"method": "GET", "pattern": "/assets*", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "nonterminal-wildcard", "target": "route", "input": {"method": "GET", "pattern": "/a/*/b", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "repeated-parameter-name", "target": "route", "input": {"method": "GET", "pattern": "/:id/:id", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "empty-parameter-name", "target": "route", "input": {"method": "GET", "pattern": "/students/:", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "invalid-parameter-name", "target": "route", "input": {"method": "GET", "pattern": "/:student-id", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "empty-pattern", "target": "route", "input": {"method": "GET", "pattern": "", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "missing-leading-slash", "target": "route", "input": {"method": "GET", "pattern": "students", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "trailing-pattern-slash", "target": "route", "input": {"method": "GET", "pattern": "/students/", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "empty-pattern-segment", "target": "route", "input": {"method": "GET", "pattern": "/students//new", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "lowercase-route-method", "target": "route", "input": {"method": "get", "pattern": "/students", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "empty-route-method", "target": "route", "input": {"method": "", "pattern": "/students", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "unicode-pattern", "target": "route", "input": {"method": "GET", "pattern": "/étudiants", "handler": "label"}, "expectedError": "invalid_route"},
+    {"id": "trailing-request-slash", "target": "request", "input": {"method": "GET", "path": "/students/"}, "expectedError": "invalid_request"},
+    {"id": "empty-request-segment", "target": "request", "input": {"method": "GET", "path": "/students//new"}, "expectedError": "invalid_request"},
+    {"id": "query-string", "target": "request", "input": {"method": "GET", "path": "/students?limit=2"}, "expectedError": "invalid_request"},
+    {"id": "fragment", "target": "request", "input": {"method": "GET", "path": "/students#new"}, "expectedError": "invalid_request"},
+    {"id": "percent-encoding", "target": "request", "input": {"method": "GET", "path": "/students/a%2Fb"}, "expectedError": "invalid_request"},
+    {"id": "dot-segment", "target": "request", "input": {"method": "GET", "path": "/students/../new"}, "expectedError": "invalid_request"},
+    {"id": "file-extension", "target": "request", "input": {"method": "GET", "path": "/assets/app.js"}, "expectedError": "invalid_request"},
+    {"id": "full-url", "target": "request", "input": {"method": "GET", "path": "https://example.test/students"}, "expectedError": "invalid_request"},
+    {"id": "empty-request-path", "target": "request", "input": {"method": "GET", "path": ""}, "expectedError": "invalid_request"},
+    {"id": "missing-request-leading-slash", "target": "request", "input": {"method": "GET", "path": "students"}, "expectedError": "invalid_request"},
+    {"id": "leading-whitespace", "target": "request", "input": {"method": "GET", "path": " /students"}, "expectedError": "invalid_request"},
+    {"id": "unicode-request", "target": "request", "input": {"method": "GET", "path": "/étudiants"}, "expectedError": "invalid_request"},
+    {"id": "request-wildcard", "target": "request", "input": {"method": "GET", "path": "/*"}, "expectedError": "invalid_request"},
+    {"id": "lowercase-request-method", "target": "request", "input": {"method": "get", "path": "/students"}, "expectedError": "invalid_request"},
+    {"id": "reserved-request-method", "target": "request", "input": {"method": "ALL", "path": "/students"}, "expectedError": "invalid_request"},
+    {"id": "out-of-domain-method-token", "target": "request", "input": {"method": "M-SEARCH", "path": "/students"}, "expectedError": "invalid_request"}
+  ]
+}

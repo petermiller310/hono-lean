@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/utils/url.ts",
+  "sourceGitBlob": "201383736f2531bf626427957e896b8fcc816ccf",
+  "sourceSha256": "d1f85f414ed8fd3682000499e74e8723139810fd612e1e1a1b4075a52ef91248",
+  "checkedPinnedBlobs": 315,
+  "fragments": {
+    "guard": {
+      "firstLine": 56,
+      "lastLine": 58,
+      "startByte": 1344,
+      "endByteExclusive": 1386,
+      "sha256": "734404478b6c51421deb9724609c9a67cadbebd27628c0ca4906bb3db5a9ce8f",
+      "sourceCopy": "verification/getpattern-body/guard.ts.txt"
+    },
+    "body": {
+      "firstLine": 56,
+      "lastLine": 77,
+      "startByte": 1344,
+      "endByteExclusive": 1920,
+      "sha256": "f72f8a61edff659809d83048b3b8861b2baf00885682c86943e4e55fdedc7419",
+      "sourceCopy": "verification/getpattern-body/body.ts.txt"
+    },
+    "declaration": {
+      "firstLine": 51,
+      "lastLine": 79,
+      "startByte": 1179,
+      "endByteExclusive": 1923,
+      "sha256": "1b018616846cebc56098792f451ad6243d9a3c08f17f80abf95b2df95bc4423c",
+      "sourceCopy": "verification/getpattern-body/declaration.ts.txt"
+    },
+    "header": {
+      "firstLine": 51,
+      "lastLine": 51,
+      "startByte": 1179,
+      "endByteExclusive": 1257,
+      "sha256": "37b0a234e404ae8715996d37c9183380531b9f3868f0155ecd07a4963f655cdd",
+      "sourceCopy": "verification/getpattern-body/header.ts.txt"
+    },
+    "leading-comments": {
+      "firstLine": 52,
+      "lastLine": 55,
+      "startByte": 1257,
+      "endByteExclusive": 1344,
+      "sha256": "836b91f99337aff0e16c46b18ad3c3f9d13d180cb512cd1253d05e8eead2f40b",
+      "sourceCopy": "verification/getpattern-body/leading-comments.ts.txt"
+    }
+  },
+  "sourceBoundary": "Actual42B guard56-58 and complete576B body56-77; actual744B exportedarrow51-79 retains header/type annotations/leadingcomments/fullbody. Fullold533B cache branch including real67/68 remains unchanged.",
+  "semanticBoundary": "Wildcard body entry requires only exactprimitive labelbinding; nonwildcard body delegates to oldcache execution including errors under explicit before facts. Arrow syntax proof is distinct from functionobject creation, argument binding, lexical closure/module/cache lifetime and native/frontend adequacy.",
+  "formalCompleteGetPatternTheorem": null,
+  "formalFunctionInvocationTheorem": null,
+  "formalModuleTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

@@ -1,0 +1,4 @@
+              if (!Object.hasOwn(params, name)) {
+                params[name] = m[0]
+              }
+              this.#pushHandlerSets(handlerSets, child, method, node.#params, params)

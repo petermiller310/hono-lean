@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "full": {
+      "firstLine": 156,
+      "lastLine": 156,
+      "startByte": 4766,
+      "endByteExclusive": 4817,
+      "sha256": "dd13b5b1aed7d6f0a70808b80bcd633f572ea02596a1368573de50a48ac8b625",
+      "sourceCopy": "verification/builtin-exec/full.ts.txt"
+    },
+    "guard-header": {
+      "firstLine": 157,
+      "lastLine": 157,
+      "startByte": 4817,
+      "endByteExclusive": 4838,
+      "sha256": "042e769ef1bf1960c8afe661fb6685043688d65289af9f4e6611beaa86d4336f",
+      "sourceCopy": "verification/builtin-exec/guard-header.ts.txt"
+    }
+  },
+  "languageReference": "ECMA-262, 16th edition (2025)",
+  "sourceBoundary": "Complete actual51B156 const declaration; separate original21B157 header identifies only actual test syntax. No invented if body is substituted for upstream code.",
+  "semanticBoundary": "Saved current callable identity selects a closed ordinary or builtin-RegExp target. Branded receiver has checked parsed/compiled range-plus program; operational matcher derives null/freshresult plus metadata with actual numeric nonglobal lastIndex frames. No match result oracle or exec-name dispatch. Constructor/getPattern/cache/tuple provenance, full regex grammar/flags, outer reachability and native adequacy remain open.",
+  "formalBuiltinRegExpExecTheorem": null,
+  "formalCompleteSearchTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

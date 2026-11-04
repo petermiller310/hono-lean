@@ -1,0 +1,2 @@
+          handlerSet.params[key] =
+            params?.[key] && !i ? params[key] : (nodeParams[key] ?? params?.[key])

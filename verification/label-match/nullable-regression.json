@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "kind": "detected_model_implementation_bug",
+  "status": "resolved_kernel_and_executable",
+  "sourceMutation": "const match = label.match(/^()?$/)",
+  "sourceSha256": "cfbd7ce84b173af14613c4208872d9f1319969b2175c054c82341cd721e9d78e",
+  "canonicalHonoSourceUnchanged": true,
+  "inputUTF16": [],
+  "modelBeforeRepair": [
+    {
+      "kind": "string",
+      "units": []
+    },
+    {
+      "kind": "string",
+      "units": []
+    }
+  ],
+  "expectedBothPinnedRuntimes": [
+    {
+      "kind": "string",
+      "units": []
+    },
+    {
+      "kind": "undefined"
+    }
+  ],
+  "engines": [
+    {
+      "runtime": "bun",
+      "version": "1.4.0"
+    },
+    {
+      "runtime": "node",
+      "version": "22.22.2"
+    }
+  ],
+  "evidence": "Root87b9b8 CLOSED0 explicitly observed model/native difference; generic optional zero-progress branch. Canonical source optional body consumes braces/nonempty body and its universal theorem domain is unchanged.",
+  "requiredRepair": "Real ordered-candidate optional execution rejects zero-progress completed body threads before considering skip; preserve original capture snapshot. Retain executable and kernel regression, all earlier cases/domains/assertions.",
+  "repairGate": "4843 CLOSEDterminal0:6jobs; unchanged canonical universal language/capture/miss statements, retained11old examples+2new=13/8axiom guards; strict-forward optional candidate filter with original skip snapshot.",
+  "independentReview": "Primary RepeatMatcher2.b and both pinned engine outputs independently checked; monotone cursor/progress/filter-neutral and zero-only lemmas inspected. No frontend hiding or label-domain narrowing.",
+  "executableRecheck": "86871 CLOSEDterminal0:seven comparison groups16.914s, retaining5193 canonical labels+3970 selected pipelines, all5 admitted source faults and4 nullable-regression cases including consuming parent/empty inner capture. Both pinned native engines agree with repaired model.",
+  "oldTransition": "run body thread ++ [thread]",
+  "repairedTransition": "(run body thread).filter (fun after => thread.seen.length < after.seen.length) ++ [thread]",
+  "freshKernelReplay": "6987 CLOSEDterminalexit0 after677-job rootbuild; full7groups86871 rechecked repairedmodel+both pinnednativeengines."
+}

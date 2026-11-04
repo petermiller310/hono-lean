@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/utils/url.ts",
+  "sourceGitBlob": "201383736f2531bf626427957e896b8fcc816ccf",
+  "sourceSha256": "d1f85f414ed8fd3682000499e74e8723139810fd612e1e1a1b4075a52ef91248",
+  "checkedPinnedBlobs": 315,
+  "fragments": {
+    "setup": {
+      "firstLine": 50,
+      "lastLine": 79,
+      "startByte": 1127,
+      "endByteExclusive": 1923,
+      "sha256": "ad1203945736ef5e2219a39c3cd9b5173760c3c5e981e757ab7d1b1a8f74d30b",
+      "sourceCopy": "verification/getpattern-invocation/setup.ts.txt"
+    }
+  },
+  "reusedSources": {
+    "init": "verification/getpattern-cache/source.json",
+    "declaration": "verification/getpattern-body/source.json"
+  },
+  "sourceBoundary": "Actual contiguous796B setup50\u201379 retains typedcache declaration52B and complete exportedarrow744B, including all actualbodybranches and comments. Remaining url.ts module/top-level dependencies are separate.",
+  "semanticBoundary": "Lexicalcells/environment-reference arrowcreation and argumentbinding/currentlookup/body/callerreturn are new proof obligations; source identity/reassembly alone is not invocation, module, TSfrontend or native adequacy.",
+  "formalCompleteGetPatternTheorem": null,
+  "formalModuleTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

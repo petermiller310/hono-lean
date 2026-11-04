@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "id": "GETPATTERN-RAW-CACHE-COLLISION-1",
+  "verified": false,
+  "nativeOnly": true,
+  "plannedFrontier": true,
+  "formalCacheTheorem": null,
+  "baselineAllowlistChanged": false,
+  "records": [
+    {
+      "id": "GETPATTERN-RAW-CACHE-COLLISION-1",
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "bun",
+      "version": "1.4.0",
+      "checkedPinnedBlobs": 315,
+      "sourceSha256": "d1f85f414ed8fd3682000499e74e8723139810fd612e1e1a1b4075a52ef91248",
+      "cacheBlockBytes": 440,
+      "cacheBlockSha256": "6708db3236d21830f5b739727a68a100a8125297ee4deb25c5f4b3bcea77ab18",
+      "order": "plain-first",
+      "expectedRawKey": ":id#{(}#undefined",
+      "cacheKeyNativeObserved": false,
+      "freshProcessRequired": true,
+      "verified": false,
+      "nativeOnly": true,
+      "nativeTypeScriptLoadingVerified": false,
+      "formalCacheTheorem": null,
+      "baselineAllowlistChanged": false,
+      "observations": {
+        "first": [
+          ":id",
+          "id",
+          true
+        ],
+        "second": [
+          ":id",
+          "id",
+          true
+        ],
+        "sameIdentity": true
+      },
+      "scope": "Actual pinned getPattern in a fresh Bun process. Raw key equality is an independent source-formula expectation; private cache storage is not instrumented. Finite values/identity/error outcomes only. No cache/cold-regex/full-router/native-frontend adequacy theorem or D1 compatibility allowance."
+    },
+    {
+      "id": "GETPATTERN-RAW-CACHE-COLLISION-1",
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "bun",
+      "version": "1.4.0",
+      "checkedPinnedBlobs": 315,
+      "sourceSha256": "d1f85f414ed8fd3682000499e74e8723139810fd612e1e1a1b4075a52ef91248",
+      "cacheBlockBytes": 440,
+      "cacheBlockSha256": "6708db3236d21830f5b739727a68a100a8125297ee4deb25c5f4b3bcea77ab18",
+      "order": "invalid-first",
+      "expectedRawKey": ":id#{(}#undefined",
+      "cacheKeyNativeObserved": false,
+      "freshProcessRequired": true,
+      "verified": false,
+      "nativeOnly": true,
+      "nativeTypeScriptLoadingVerified": false,
+      "formalCacheTheorem": null,
+      "baselineAllowlistChanged": false,
+      "observations": {
+        "first": {
+          "ok": false,
+          "errorName": "SyntaxError"
+        },
+        "second": [
+          ":id",
+          "id",
+          true
+        ]
+      },
+      "scope": "Actual pinned getPattern in a fresh Bun process. Raw key equality is an independent source-formula expectation; private cache storage is not instrumented. Finite values/identity/error outcomes only. No cache/cold-regex/full-router/native-frontend adequacy theorem or D1 compatibility allowance."
+    }
+  ]
+}

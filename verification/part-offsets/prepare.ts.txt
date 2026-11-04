@@ -1,0 +1,8 @@
+            if (!partOffsets) {
+              partOffsets = []
+              let offset = path[0] === '/' ? 1 : 0
+              for (let p = 0; p < len; p++) {
+                partOffsets[p] = offset
+                offset += parts[p].length + 1
+              }
+            }

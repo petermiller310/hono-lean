@@ -1,0 +1,2 @@
+                const targetCurNodes = (curNodesQueue[componentCount] ||= [])
+                targetCurNodes.push(child)

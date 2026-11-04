@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/honojs/hono.git",
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sources": {
+    "src/router/trie-router/node.ts": {
+      "sha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+      "gitBlob": "580b859a912a8c2d10982d430de9357da241048a"
+    },
+    "src/router.ts": {
+      "sha256": "5a6563fc3b21625f39de9e8b981840454920ef100048ab9e6344c01c1f9cdd98",
+      "gitBlob": "ec12588ab651a7ffe0d0178b37099edf21833ee0"
+    }
+  },
+  "fragments": {
+    "collector": {
+      "sourcePath": "src/router/trie-router/node.ts",
+      "firstLine": 87,
+      "lastLine": 87,
+      "startByte": 2489,
+      "endByteExclusive": 2539,
+      "sha256": "1ea9120b7217f11add1f8e423040d71aaaa291284a32e19bf763e424c52afb66",
+      "whitespacePolicy": "Exact declaration indentation and LF retained"
+    },
+    "row": {
+      "sourcePath": "src/router/trie-router/node.ts",
+      "firstLine": 72,
+      "lastLine": 72,
+      "startByte": 1934,
+      "endByteExclusive": 1967,
+      "sha256": "25a1f62882ae6b9395a2835ed8228f9f719b9fa60719e8332b579e07d5998bb7",
+      "whitespacePolicy": "Exact declaration indentation and LF retained"
+    },
+    "selection": {
+      "sourcePath": "src/router/trie-router/node.ts",
+      "firstLine": 73,
+      "lastLine": 73,
+      "startByte": 1967,
+      "endByteExclusive": 2049,
+      "sha256": "a23a8cc583f5cf4ecc62fd222e6f1b9a7d4015063410eaa1fa150fcb0a9461b9",
+      "whitespacePolicy": "Exact declaration indentation and LF retained"
+    },
+    "all": {
+      "sourcePath": "src/router.ts",
+      "firstLine": 9,
+      "lastLine": 9,
+      "startByte": 188,
+      "endByteExclusive": 202,
+      "sha256": "dbe058367f32b84d12e5553209e5e423df157a281f6d14329f19301ae1f7ff18",
+      "whitespacePolicy": "Exact initializer expression; excludes export/const/name/equal prefix and following LF"
+    }
+  },
+  "containingContexts": {
+    "pushHandlerSets": {
+      "sourcePath": "src/router/trie-router/node.ts",
+      "firstLine": 64,
+      "lastLine": 84,
+      "startByte": 1683,
+      "endByteExclusive": 2430,
+      "sha256": "aad656effa61a33822d528bdc3f1f3f68eea9021fe3ea175e37f5c27563679b7",
+      "source": "  #pushHandlerSets(\n    handlerSets: HandlerParamsSet<T>[],\n    node: Node<T>,\n    method: string,\n    nodeParams: Record<string, string>,\n    params?: Record<string, string>\n  ): void {\n    for (let i = 0, len = node.#methods.length; i < len; i++) {\n      const m = node.#methods[i]\n      const handlerSet = (m[method] || m[METHOD_NAME_ALL]) as HandlerParamsSet<T>\n      if (handlerSet) {\n        handlerSet.params = createNullObject()\n        handlerSets.push(handlerSet)\n        for (let i = 0, len = handlerSet.possibleKeys.length; i < len; i++) {\n          const key = handlerSet.possibleKeys[i]\n          handlerSet.params[key] =\n            params?.[key] && !i ? params[key] : (nodeParams[key] ?? params?.[key])\n        }\n      }\n    }\n  }\n",
+      "verificationStatus": "Provenance only; surrounding traversal/outer method loop not parsed"
+    },
+    "search": {
+      "sourcePath": "src/router/trie-router/node.ts",
+      "firstLine": 86,
+      "lastLine": 220,
+      "startByte": 2431,
+      "endByteExclusive": 6746,
+      "sha256": "d45f242595fbf9a87c05bdaf3e79b35951f48b8e31161822bc228993be8eaf2a",
+      "source": "  search(method: string, path: string): [[T, Params][]] {\n    const handlerSets: HandlerParamsSet<T>[] = []\n    this.#params = emptyParams\n\n    // eslint-disable-next-line @typescript-eslint/no-this-alias\n    const curNode: Node<T> = this\n    let curNodes = [curNode]\n    const parts = splitPath(path)\n    const curNodesQueue: Node<T>[][] = []\n\n    const len = parts.length\n    let partOffsets: number[] | null = null\n\n    for (let i = 0; i < len; i++) {\n      const part: string = parts[i]\n      const isLast = i === len - 1\n      const tempNodes: Node<T>[] = []\n\n      for (let j = 0, len2 = curNodes.length; j < len2; j++) {\n        const node = curNodes[j]\n        const nextNode = node.#children[part]\n\n        if (nextNode) {\n          nextNode.#params = node.#params\n          if (isLast) {\n            // '/hello/*' => match '/hello'\n            if (nextNode.#children['*']) {\n              this.#pushHandlerSets(handlerSets, nextNode.#children['*'], method, node.#params)\n            }\n            this.#pushHandlerSets(handlerSets, nextNode, method, node.#params)\n          } else {\n            tempNodes.push(nextNode)\n          }\n        }\n\n        for (const child of node.#patterns) {\n          const pattern = child.#pattern!\n          const params = node.#params === emptyParams ? {} : { ...node.#params }\n\n          // Wildcard\n          // '/hello/*/foo' => match /hello/bar/foo\n          if (typeof pattern === 'string') {\n            if (pattern === '*' || part.startsWith(pattern.slice(0, -1))) {\n              this.#pushHandlerSets(handlerSets, child, method, node.#params)\n              if (pattern === '*') {\n                child.#params = params\n                tempNodes.push(child)\n              }\n            }\n            continue\n          }\n\n          const [, name, matcher] = pattern\n\n          if (!part && matcher === true) {\n            continue\n          }\n\n          // `/js/:filename{[a-z]+.js}` => match /js/chunk/123.js\n          if (matcher !== true) {\n            if (!partOffsets) {\n              partOffsets = []\n              let offset = path[0] === '/' ? 1 : 0\n              for (let p = 0; p < len; p++) {\n                partOffsets[p] = offset\n                offset += parts[p].length + 1\n              }\n            }\n            const restPathString = path.slice(partOffsets[i])\n\n            const m = matcher.exec(restPathString)\n            if (m) {\n              if (!Object.hasOwn(params, name)) {\n                params[name] = m[0]\n              }\n              this.#pushHandlerSets(handlerSets, child, method, node.#params, params)\n\n              // '/:id{[0-9]+}/*' => match '/123'\n              if (m[0].length === restPathString.length && child.#children['*']) {\n                this.#pushHandlerSets(\n                  handlerSets,\n                  child.#children['*'],\n                  method,\n                  node.#params,\n                  params\n                )\n              }\n\n              for (const _ in child.#children) {\n                child.#params = params\n                const componentCount = m[0].match(/\\//g)?.length ?? 0\n                const targetCurNodes = (curNodesQueue[componentCount] ||= [])\n                targetCurNodes.push(child)\n                break\n              }\n\n              continue\n            }\n          }\n\n          if (matcher === true || matcher.test(part)) {\n            if (!Object.hasOwn(params, name)) {\n              params[name] = part\n            }\n            if (isLast) {\n              this.#pushHandlerSets(handlerSets, child, method, params, node.#params)\n              if (child.#children['*']) {\n                this.#pushHandlerSets(\n                  handlerSets,\n                  child.#children['*'],\n                  method,\n                  params,\n                  node.#params\n                )\n              }\n            } else {\n              child.#params = params\n              tempNodes.push(child)\n            }\n          }\n        }\n      }\n\n      const shifted = curNodesQueue.shift()\n      curNodes = shifted ? tempNodes.concat(shifted) : tempNodes\n    }\n\n    if (handlerSets[1]) {\n      handlerSets.sort((a, b) => {\n        return a.score - b.score\n      })\n    }\n\n    return [handlerSets.map(({ handler, params }) => [handler, params] as [T, Params])]\n  }\n",
+      "verificationStatus": "Provenance only; surrounding traversal/outer method loop not parsed"
+    }
+  },
+  "collectorLineCorrection": "Actual typed collector is line87; line90 is an eslint comment",
+  "sourceSubset": "Retained type metadata; typed declaration; lazy value-returning logical OR; direct private row indexing; const assertion",
+  "moduleBoundary": "Actual ALL initializer is parsed; module export/import linking and binding identity remain explicit",
+  "formalSearchTraversalTheorem": null,
+  "formalOuterMethodLoopTheorem": null
+}

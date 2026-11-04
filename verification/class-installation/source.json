@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/honojs/hono.git",
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "fragments": {
+    "preamble": {
+      "sourcePath": "src/router/trie-router/node.ts",
+      "firstLine": 17,
+      "lastLine": 18,
+      "startByte": 417,
+      "endByteExclusive": 470,
+      "sha256": "df69a2bc8c1a798a716361053f30aaca24ca5ec79e5195e2ff13aa5358185702",
+      "whitespacePolicy": "Exact source indentation, blank lines and trailing LF retained"
+    },
+    "fields": {
+      "sourcePath": "src/router/trie-router/node.ts",
+      "firstLine": 21,
+      "lastLine": 26,
+      "startByte": 494,
+      "endByteExclusive": 708,
+      "sha256": "cc620af41bea64739c5d2f8bc8cd512b222e665b0117c06ad9a30a25713b73e9",
+      "whitespacePolicy": "Exact source indentation, blank lines and trailing LF retained"
+    },
+    "method": {
+      "sourcePath": "src/router/trie-router/node.ts",
+      "firstLine": 64,
+      "lastLine": 84,
+      "startByte": 1683,
+      "endByteExclusive": 2430,
+      "sha256": "aad656effa61a33822d528bdc3f1f3f68eea9021fe3ea175e37f5c27563679b7",
+      "whitespacePolicy": "Exact source indentation, blank lines and trailing LF retained"
+    }
+  },
+  "containingClass": {
+    "firstLine": 20,
+    "lastLine": 221,
+    "startByte": 471,
+    "endByteExclusive": 6748,
+    "sha256": "83b3f369cad8c4a2bdf7f6bb27faa791a31c473f232730a672f7471ef997d018",
+    "source": "export class Node<T> {\n  #methods: Record<string, HandlerSet<T>>[] = []\n\n  #children: Record<string, Node<T>> = createNullObject()\n  #patterns: Node<T>[] = []\n  #pattern?: Pattern | string\n  #params: Record<string, string> = emptyParams\n\n  insert(method: string, path: string, handler: T): void {\n    // eslint-disable-next-line @typescript-eslint/no-this-alias\n    let curNode: Node<T> = this\n    const parts = splitRoutingPath(path)\n\n    const possibleKeys = new Set<string>()\n\n    let i = 0\n    for (const p of parts) {\n      const nextP = parts[++i]\n      const pattern =\n        getPattern(p, nextP) ||\n        (nextP === undefined && p && p.indexOf('*') === p.length - 1 ? p : null)\n      const isParam = Array.isArray(pattern)\n      const key = isParam ? pattern[0] : pattern || p\n\n      const child = (curNode.#children[key] ||= new Node())\n      if (pattern && !child.#pattern) {\n        child.#pattern = pattern\n        curNode.#patterns.push(child)\n      }\n      curNode = child\n      if (isParam) {\n        possibleKeys.add(pattern[1])\n      }\n    }\n\n    curNode.#methods.push({\n      [method]: {\n        handler,\n        possibleKeys: [...possibleKeys],\n        score: ++order,\n      },\n    })\n  }\n\n  #pushHandlerSets(\n    handlerSets: HandlerParamsSet<T>[],\n    node: Node<T>,\n    method: string,\n    nodeParams: Record<string, string>,\n    params?: Record<string, string>\n  ): void {\n    for (let i = 0, len = node.#methods.length; i < len; i++) {\n      const m = node.#methods[i]\n      const handlerSet = (m[method] || m[METHOD_NAME_ALL]) as HandlerParamsSet<T>\n      if (handlerSet) {\n        handlerSet.params = createNullObject()\n        handlerSets.push(handlerSet)\n        for (let i = 0, len = handlerSet.possibleKeys.length; i < len; i++) {\n          const key = handlerSet.possibleKeys[i]\n          handlerSet.params[key] =\n            params?.[key] && !i ? params[key] : (nodeParams[key] ?? params?.[key])\n        }\n      }\n    }\n  }\n\n  search(method: string, path: string): [[T, Params][]] {\n    const handlerSets: HandlerParamsSet<T>[] = []\n    this.#params = emptyParams\n\n    // eslint-disable-next-line @typescript-eslint/no-this-alias\n    const curNode: Node<T> = this\n    let curNodes = [curNode]\n    const parts = splitPath(path)\n    const curNodesQueue: Node<T>[][] = []\n\n    const len = parts.length\n    let partOffsets: number[] | null = null\n\n    for (let i = 0; i < len; i++) {\n      const part: string = parts[i]\n      const isLast = i === len - 1\n      const tempNodes: Node<T>[] = []\n\n      for (let j = 0, len2 = curNodes.length; j < len2; j++) {\n        const node = curNodes[j]\n        const nextNode = node.#children[part]\n\n        if (nextNode) {\n          nextNode.#params = node.#params\n          if (isLast) {\n            // '/hello/*' => match '/hello'\n            if (nextNode.#children['*']) {\n              this.#pushHandlerSets(handlerSets, nextNode.#children['*'], method, node.#params)\n            }\n            this.#pushHandlerSets(handlerSets, nextNode, method, node.#params)\n          } else {\n            tempNodes.push(nextNode)\n          }\n        }\n\n        for (const child of node.#patterns) {\n          const pattern = child.#pattern!\n          const params = node.#params === emptyParams ? {} : { ...node.#params }\n\n          // Wildcard\n          // '/hello/*/foo' => match /hello/bar/foo\n          if (typeof pattern === 'string') {\n            if (pattern === '*' || part.startsWith(pattern.slice(0, -1))) {\n              this.#pushHandlerSets(handlerSets, child, method, node.#params)\n              if (pattern === '*') {\n                child.#params = params\n                tempNodes.push(child)\n              }\n            }\n            continue\n          }\n\n          const [, name, matcher] = pattern\n\n          if (!part && matcher === true) {\n            continue\n          }\n\n          // `/js/:filename{[a-z]+.js}` => match /js/chunk/123.js\n          if (matcher !== true) {\n            if (!partOffsets) {\n              partOffsets = []\n              let offset = path[0] === '/' ? 1 : 0\n              for (let p = 0; p < len; p++) {\n                partOffsets[p] = offset\n                offset += parts[p].length + 1\n              }\n            }\n            const restPathString = path.slice(partOffsets[i])\n\n            const m = matcher.exec(restPathString)\n            if (m) {\n              if (!Object.hasOwn(params, name)) {\n                params[name] = m[0]\n              }\n              this.#pushHandlerSets(handlerSets, child, method, node.#params, params)\n\n              // '/:id{[0-9]+}/*' => match '/123'\n              if (m[0].length === restPathString.length && child.#children['*']) {\n                this.#pushHandlerSets(\n                  handlerSets,\n                  child.#children['*'],\n                  method,\n                  node.#params,\n                  params\n                )\n              }\n\n              for (const _ in child.#children) {\n                child.#params = params\n                const componentCount = m[0].match(/\\//g)?.length ?? 0\n                const targetCurNodes = (curNodesQueue[componentCount] ||= [])\n                targetCurNodes.push(child)\n                break\n              }\n\n              continue\n            }\n          }\n\n          if (matcher === true || matcher.test(part)) {\n            if (!Object.hasOwn(params, name)) {\n              params[name] = part\n            }\n            if (isLast) {\n              this.#pushHandlerSets(handlerSets, child, method, params, node.#params)\n              if (child.#children['*']) {\n                this.#pushHandlerSets(\n                  handlerSets,\n                  child.#children['*'],\n                  method,\n                  params,\n                  node.#params\n                )\n              }\n            } else {\n              child.#params = params\n              tempNodes.push(child)\n            }\n          }\n        }\n      }\n\n      const shifted = curNodesQueue.shift()\n      curNodes = shifted ? tempNodes.concat(shifted) : tempNodes\n    }\n\n    if (handlerSets[1]) {\n      handlerSets.sort((a, b) => {\n        return a.score - b.score\n      })\n    }\n\n    return [handlerSets.map(({ handler, params }) => [handler, params] as [T, Params])]\n  }\n}\n",
+    "verificationStatus": "Provenance only; selected private data fields, private method and preamble are parsed separately. Public insert/search, full class evaluation, prototype/default constructor and module linking remain open."
+  },
+  "privateNames": [
+    "methods",
+    "children",
+    "patterns",
+    "pattern",
+    "params",
+    "pushHandlerSets"
+  ],
+  "privateInstallationOrder": "The private method read handle is installed before all five ordered data fields, despite appearing after them in source.",
+  "sourceSubset": "Retained private data/method type metadata; shared lexical identities from selected declarations; parsed source method closure appended to a threaded disjoint method table; method-before-field initialization; selected top-level call connection.",
+  "initializationBoundary": "Combined private name reservations and source-bound method closure/read handles are derived. Supplied prototype/helper/import/captured-value context, public methods, native method kinds/read-only enforcement, complete class/default-constructor/newTarget/module live cells and native adequacy remain separate.",
+  "formalCompleteClassTheorem": null,
+  "formalNativeModuleLinkingTheorem": null
+}

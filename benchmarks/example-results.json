@@ -1,0 +1,458 @@
+{
+  "config": {
+    "seed": 1729,
+    "routes": 64,
+    "queries": 32,
+    "warmupSamples": 3,
+    "samples": 7,
+    "buildIterations": 16,
+    "lookupIterations": 4096
+  },
+  "inputSha256": "96a25d9c13d0bca618b82ca8eefed986bd82cf4c2a2048984369f643b8bb4e45",
+  "honoRevision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "leanVersion": "Lean (version 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "bunVersion": "1.4.0",
+  "pythonVersion": "3.14.8",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "cpu": "arm",
+  "cpuCount": 14,
+  "cCompiler": "clang version 23.1.0 (https://github.com/llvm/llvm-project ea7d852a70e8bdfaf601d6626a760f9771b2c4b4)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: <lean-toolchain>/bin",
+  "compileLog": [
+    {
+      "message": ".> <lean-toolchain>/bin/clang -c -o <project>/.lake/build/ir/BenchMain.c.o.export <project>/.lake/build/ir/BenchMain.c -I <lean-toolchain>/include -fstack-clash-protection -ffp-contract=off -fdata-sections -ffunction-sections -fvisibility=hidden -Wno-unused-command-line-argument --sysroot <lean-toolchain> -nostdinc -isystem <lean-toolchain>/include/clang -O3 -DNDEBUG -DLEAN_EXPORTING",
+      "level": "trace"
+    }
+  ],
+  "binarySha256": "fdd9180bb17554d9219643266de062882f564e4eef765d22013e16c3b709d2f4",
+  "projectRevision": "54999961dd82dc6f3e504a27242135feeed6a81d",
+  "projectDirty": true,
+  "sourceSha256": {
+    "BenchMain.lean": "b23b8b9868871cadec40aed4be3a3fa24ae20d9cd1383507fee8548cf5d0df47",
+    "lakefile.toml": "d9560aaf3fa517c388b57e62e1042150867dc958ac16566cd4e900a479033ca1",
+    "HonoLean/Adapter/Json.lean": "beaa82df6d2e685f70f44a10fec21a2ada9cde6d64844735e31f91d0a99b6b01",
+    "HonoLean/Adapter.lean": "bb249c5e0379a474e63739fa59e7ab0222c07862402f441430766747d463b125",
+    "HonoLean/Literal/Correctness.lean": "78f1ce974c4b16fafbf4970d713a5a8a315ed05062f4678ed9672032b4b1158c",
+    "HonoLean/Literal/Examples.lean": "f385ab27922f81fb4232630c410c1c1f3928fc6978378721758c8846f18d7bcc",
+    "HonoLean/Literal/Reference.lean": "9d17d7dd3fba61124de9e4e340b986184100fdf62eb5cb9b17d5548804ec7c0f",
+    "HonoLean/Literal/Spec.lean": "800f30722841cbfbbef105081cee46a0c875782b5c297a5959fe3a3f05c59064",
+    "HonoLean/Literal/Trie.lean": "0e9c51030df2c16144856583d5b68aa5b329eee09da67e0e1cf6b68995b89fd9",
+    "HonoLean/Literal.lean": "f489ae1d2dbb5d0dc590db4ed66698ff70d19d0d9f9d1166f37913c20c1344c8",
+    "HonoLean/Router/Correctness.lean": "00e457864b57498f8e0b44577fb1472ea20397dc028c5d79faea8d901722eef7",
+    "HonoLean/Router/Examples.lean": "17b6fbe1e774ac3e0a848b49516fd11e5aaa369e16152aacccc79ed894212b02",
+    "HonoLean/Router.lean": "4f46858a96c97b3edbcaf59ae2dbf018d6b5aab0eef5f36191364c432a46569f",
+    "benchmarks/run.py": "2fdcfa86be3b3e8f10d06e5042b350a55ae8714f7fe0a46a7c5a587fccfc4bd5",
+    "benchmarks/tests.py": "50a77c04cc2332b78fe0d5fadab6117a9f922efd61e9d5349351fc00a62a0733",
+    "benchmarks/hono.ts": "7398a8f2f85de23e3a4d66a632032f67fdee97516c12414635549eacff22b843"
+  },
+  "measurements": {
+    "lean": [
+      {
+        "build": [
+          {
+            "checksum": 640,
+            "nanos": 319792
+          },
+          {
+            "checksum": 640,
+            "nanos": 332958
+          },
+          {
+            "checksum": 640,
+            "nanos": 355875
+          },
+          {
+            "checksum": 640,
+            "nanos": 353542
+          },
+          {
+            "checksum": 640,
+            "nanos": 359709
+          },
+          {
+            "checksum": 640,
+            "nanos": 399834
+          },
+          {
+            "checksum": 640,
+            "nanos": 336875
+          }
+        ],
+        "lookup": [
+          {
+            "checksum": 102144,
+            "nanos": 2199583
+          },
+          {
+            "checksum": 102144,
+            "nanos": 2053042
+          },
+          {
+            "checksum": 102144,
+            "nanos": 2079333
+          },
+          {
+            "checksum": 102144,
+            "nanos": 2077750
+          },
+          {
+            "checksum": 102144,
+            "nanos": 2238917
+          },
+          {
+            "checksum": 102144,
+            "nanos": 2151750
+          },
+          {
+            "checksum": 102144,
+            "nanos": 2152791
+          }
+        ],
+        "name": "shared-prefix"
+      },
+      {
+        "build": [
+          {
+            "checksum": 33208,
+            "nanos": 93750
+          },
+          {
+            "checksum": 33208,
+            "nanos": 114417
+          },
+          {
+            "checksum": 33208,
+            "nanos": 88500
+          },
+          {
+            "checksum": 33208,
+            "nanos": 88875
+          },
+          {
+            "checksum": 33208,
+            "nanos": 91375
+          },
+          {
+            "checksum": 33208,
+            "nanos": 95792
+          },
+          {
+            "checksum": 33208,
+            "nanos": 93791
+          }
+        ],
+        "lookup": [
+          {
+            "checksum": 8600064,
+            "nanos": 35849042
+          },
+          {
+            "checksum": 8600064,
+            "nanos": 30377375
+          },
+          {
+            "checksum": 8600064,
+            "nanos": 28979959
+          },
+          {
+            "checksum": 8600064,
+            "nanos": 28522709
+          },
+          {
+            "checksum": 8600064,
+            "nanos": 28574458
+          },
+          {
+            "checksum": 8600064,
+            "nanos": 28953041
+          },
+          {
+            "checksum": 8600064,
+            "nanos": 29070834
+          }
+        ],
+        "name": "overlapping"
+      }
+    ],
+    "hono": [
+      {
+        "name": "shared-prefix",
+        "build": [
+          {
+            "nanos": 610708,
+            "checksum": 640
+          },
+          {
+            "nanos": 796875,
+            "checksum": 640
+          },
+          {
+            "nanos": 443375,
+            "checksum": 640
+          },
+          {
+            "nanos": 1296333,
+            "checksum": 640
+          },
+          {
+            "nanos": 415167,
+            "checksum": 640
+          },
+          {
+            "nanos": 388333,
+            "checksum": 640
+          },
+          {
+            "nanos": 415958,
+            "checksum": 640
+          }
+        ],
+        "lookup": [
+          {
+            "nanos": 1120750,
+            "checksum": 102144
+          },
+          {
+            "nanos": 1585417,
+            "checksum": 102144
+          },
+          {
+            "nanos": 1058459,
+            "checksum": 102144
+          },
+          {
+            "nanos": 2135250,
+            "checksum": 102144
+          },
+          {
+            "nanos": 1291792,
+            "checksum": 102144
+          },
+          {
+            "nanos": 1662917,
+            "checksum": 102144
+          },
+          {
+            "nanos": 1121625,
+            "checksum": 102144
+          }
+        ]
+      },
+      {
+        "name": "overlapping",
+        "build": [
+          {
+            "nanos": 590208,
+            "checksum": 33208
+          },
+          {
+            "nanos": 769333,
+            "checksum": 33208
+          },
+          {
+            "nanos": 998042,
+            "checksum": 33208
+          },
+          {
+            "nanos": 561541,
+            "checksum": 33208
+          },
+          {
+            "nanos": 543458,
+            "checksum": 33208
+          },
+          {
+            "nanos": 400250,
+            "checksum": 33208
+          },
+          {
+            "nanos": 446166,
+            "checksum": 33208
+          }
+        ],
+        "lookup": [
+          {
+            "nanos": 19875750,
+            "checksum": 8600064
+          },
+          {
+            "nanos": 20231167,
+            "checksum": 8600064
+          },
+          {
+            "nanos": 21174583,
+            "checksum": 8600064
+          },
+          {
+            "nanos": 19768708,
+            "checksum": 8600064
+          },
+          {
+            "nanos": 20351833,
+            "checksum": 8600064
+          },
+          {
+            "nanos": 19968917,
+            "checksum": 8600064
+          },
+          {
+            "nanos": 18509583,
+            "checksum": 8600064
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "lean": {
+      "shared-prefix": {
+        "build": {
+          "medianNsPerOp": 22096.375,
+          "minNsPerOp": 19987.0,
+          "maxNsPerOp": 24989.625
+        },
+        "lookup": {
+          "medianNsPerOp": 525.32958984375,
+          "minNsPerOp": 501.23095703125,
+          "maxNsPerOp": 546.610595703125
+        }
+      },
+      "overlapping": {
+        "build": {
+          "medianNsPerOp": 5859.375,
+          "minNsPerOp": 5531.25,
+          "maxNsPerOp": 7151.0625
+        },
+        "lookup": {
+          "medianNsPerOp": 7075.185302734375,
+          "minNsPerOp": 6963.552001953125,
+          "maxNsPerOp": 8752.20751953125
+        }
+      }
+    },
+    "hono": {
+      "shared-prefix": {
+        "build": {
+          "medianNsPerOp": 27710.9375,
+          "minNsPerOp": 24270.8125,
+          "maxNsPerOp": 81020.8125
+        },
+        "lookup": {
+          "medianNsPerOp": 315.37890625,
+          "minNsPerOp": 258.412841796875,
+          "maxNsPerOp": 521.30126953125
+        }
+      },
+      "overlapping": {
+        "build": {
+          "medianNsPerOp": 35096.3125,
+          "minNsPerOp": 25015.625,
+          "maxNsPerOp": 62377.625
+        },
+        "lookup": {
+          "medianNsPerOp": 4875.223876953125,
+          "minNsPerOp": 4518.941162109375,
+          "maxNsPerOp": 5169.575927734375
+        }
+      }
+    }
+  },
+  "workloads": [
+    {
+      "name": "shared-prefix",
+      "variants": 2,
+      "routes": 64,
+      "queries": 32,
+      "matchesPerQuery": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "overlapping",
+      "variants": 2,
+      "routes": 64,
+      "queries": 32,
+      "matchesPerQuery": [
+        48,
+        64,
+        64,
+        16,
+        48,
+        64,
+        64,
+        4,
+        48,
+        64,
+        64,
+        16,
+        48,
+        64,
+        64,
+        4,
+        48,
+        64,
+        64,
+        16,
+        48,
+        64,
+        64,
+        4,
+        48,
+        64,
+        64,
+        16,
+        48,
+        64,
+        64,
+        4
+      ]
+    }
+  ],
+  "boundaries": {
+    "build": "fresh core router + array push; current batch roots retained until stop; post-stop lookup sink excluded; Lean teardown outside, Hono GC may occur in samples",
+    "lookup": "one existing router + core lookup + small length/ordinal digest",
+    "excluded": "process startup, external JSON/text parsing, output formatting, semantic preflight",
+    "asymmetry": "Lean uses pre-parsed typed paths; Hono add/match split canonical text internally",
+    "caches": "fresh routers in a warm process; Hono module-level pattern cache is warm, not cold-start construction",
+    "environment": "sequential runtime processes; no CPU affinity, power, load or GC isolation; CPU brand unavailable"
+  },
+  "postRunMetadataEdits": [
+    {
+      "file": "benchmarks/run.py",
+      "measuredSha256": "2fdcfa86be3b3e8f10d06e5042b350a55ae8714f7fe0a46a7c5a587fccfc4bd5",
+      "currentSha256": "6193a583176a66ef9d88f98249f50f950693e8919d46e8cd39192bbf5d7ad58e",
+      "reason": "Build-boundary description clarified after measurement; all raw durations/checksums and timed Lean/TypeScript code unchanged. sourceSha256 retains hashes at measurement time."
+    }
+  ]
+}

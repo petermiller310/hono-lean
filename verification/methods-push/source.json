@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/honojs/hono.git",
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragment": {
+    "firstLine": 55,
+    "lastLine": 61,
+    "startByte": 1534,
+    "endByteExclusive": 1678,
+    "sha256": "47cdbb194d9bd2dbd7c024e2d56e01e2d9bb3c10971e5af82ae0c5ecfaa7ab1b",
+    "whitespacePolicy": "Exact complete private receiver/member/push call, indentation, newlines and trailing LF retained"
+  },
+  "containingMethod": {
+    "name": "Node.insert",
+    "firstLine": 28,
+    "lastLine": 62,
+    "startByte": 709,
+    "endByteExclusive": 1682,
+    "sha256": "fcb9f4c4e1b51d3146e3ead63c590834f1102c443f9a285fc457dd3b5791a25b",
+    "source": "  insert(method: string, path: string, handler: T): void {\n    // eslint-disable-next-line @typescript-eslint/no-this-alias\n    let curNode: Node<T> = this\n    const parts = splitRoutingPath(path)\n\n    const possibleKeys = new Set<string>()\n\n    let i = 0\n    for (const p of parts) {\n      const nextP = parts[++i]\n      const pattern =\n        getPattern(p, nextP) ||\n        (nextP === undefined && p && p.indexOf('*') === p.length - 1 ? p : null)\n      const isParam = Array.isArray(pattern)\n      const key = isParam ? pattern[0] : pattern || p\n\n      const child = (curNode.#children[key] ||= new Node())\n      if (pattern && !child.#pattern) {\n        child.#pattern = pattern\n        curNode.#patterns.push(child)\n      }\n      curNode = child\n      if (isParam) {\n        possibleKeys.add(pattern[1])\n      }\n    }\n\n    curNode.#methods.push({\n      [method]: {\n        handler,\n        possibleKeys: [...possibleKeys],\n        score: ++order,\n      },\n    })\n  }\n",
+    "verificationStatus": "Provenance only; constructor/field initialization and insertion traversal are not parsed"
+  },
+  "sourceSubset": "Lexically branded private property; prepared standard array push call before argument; complete handler-record object argument",
+  "formalPrivateMethodsPushTheorem": "HonoLean.Upstream.NodeMethodsPush.parsed_source_correct",
+  "theoremBoundary": "Conditional theorem in the declared source model; native/frontend/engine adequacy and actual entry reachability remain open",
+  "formalInsertTraversalTheorem": null
+}

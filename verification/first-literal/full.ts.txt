@@ -1,0 +1,33 @@
+    const handlerSets: HandlerParamsSet<T>[] = []
+    this.#params = emptyParams
+
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const curNode: Node<T> = this
+    let curNodes = [curNode]
+    const parts = splitPath(path)
+    const curNodesQueue: Node<T>[][] = []
+
+    const len = parts.length
+    let partOffsets: number[] | null = null
+
+    for (let i = 0; i < len; i++) {
+      const part: string = parts[i]
+      const isLast = i === len - 1
+      const tempNodes: Node<T>[] = []
+
+      for (let j = 0, len2 = curNodes.length; j < len2; j++) {
+        const node = curNodes[j]
+        const nextNode = node.#children[part]
+
+        if (nextNode) {
+          nextNode.#params = node.#params
+          if (isLast) {
+            // '/hello/*' => match '/hello'
+            if (nextNode.#children['*']) {
+              this.#pushHandlerSets(handlerSets, nextNode.#children['*'], method, node.#params)
+            }
+            this.#pushHandlerSets(handlerSets, nextNode, method, node.#params)
+          } else {
+            tempNodes.push(nextNode)
+          }
+        }

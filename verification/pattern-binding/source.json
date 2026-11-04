@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "full": {
+      "firstLine": 138,
+      "lastLine": 138,
+      "startByte": 4205,
+      "endByteExclusive": 4249,
+      "sha256": "4bd90c878a3496b7a05edc1a3a90ba0e83afc24484b15acd1e600d5aff95a2a1",
+      "sourceCopy": "verification/pattern-binding/full.ts.txt"
+    }
+  },
+  "languageReference": "ECMA-262, 16th edition (2025)",
+  "sourceBoundary": "Complete actual44B const declaration/ArrayBindingPattern with first elision and name/matcher lexical bindings. Not index-read sugar, containing pattern loop, private pattern installation or all of Node.search.",
+  "semanticBoundary": "Closed default-array iterator protocol uses current array reference/heap, saved next method, elision Step, binding StepValue and current full-chain missing-return Close. Fresh selected activation/flat lexical environment and standard symbol/intrinsic/prototype/native interpretation remain explicit. Constructor composition must derive tuple/brand/name/matcher, not receive completed outputs. restPathString146-154 preparation remains separate.",
+  "nativeBoundary": "ENGINE-ELISION-1 custom iterator result0.value Bun extraGet/Node skip remains frozen native-only evidence, outside the closed default-DATA domain. No comparison baseline or allowlist change.",
+  "formalCompleteSearchTheorem": null,
+  "formalGeneralIteratorAdequacyTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

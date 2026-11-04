@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "full": {
+      "firstLine": 123,
+      "lastLine": 123,
+      "startByte": 3672,
+      "endByteExclusive": 3753,
+      "sha256": "6b7b4f3a523c4226e9a766dfadf996c15d130b51ab5ad96d47a61cf64b4e46c2",
+      "sourceCopy": "verification/params-init/full.ts.txt"
+    }
+  },
+  "languageReference": "ECMA-262, 16th edition (2025)",
+  "sourceBoundary": "Complete original conditional initializer123, retaining BOTH empty and object-spread literal arms, identity test and private reads. No synthetic branch replacement; containing pattern loop/search reachability remain open.",
+  "semanticBoundary": "Identity-derived branch; one fresh ordinary object; unequal arm shallow copies own enumerable DATA descriptors via CreateDataProperty rather than Set. Nonenumerable accessors and inherited properties omitted. Any legal own-string-key order gets extensional contract, not equal raw heap order or native OwnPropertyKeys adequacy. Enumerable getters/proxies/symbols/general native adequacy remain open.",
+  "formalCompleteSearchTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

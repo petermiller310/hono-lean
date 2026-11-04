@@ -1,0 +1,81 @@
+name: Lean Action CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  HONO_REF: 5ca49b0720755c585c9a9835f0a479ceea36fb52
+
+jobs:
+  router:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: leanprover/lean-action@v1
+      - name: Check Markdown links
+        run: python3 scripts/check_links.py
+      - name: Test text and JSON adapters
+        run: |
+          lake exe adapter-tests
+          python3 tests/adapter_cli.py
+      - name: Replay router proofs through the kernel
+        run: lake env leanchecker --fresh HonoLean
+      - name: Check out the pinned raw Hono source
+        uses: actions/checkout@v7
+        with:
+          repository: honojs/hono
+          ref: ${{ env.HONO_REF }}
+          path: .hono-cache
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
+      - name: Test comparison failures and source pinning
+        run: python3 tests/comparison_tests.py --hono .hono-cache
+      - name: Compare Lean with pinned Hono
+        run: python3 tests/compare_hono.py --hono .hono-cache
+      - name: Check benchmark semantics and timing shape
+        run: python3 benchmarks/tests.py --hono .hono-cache
+      - name: Save comparison evidence
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: hono-comparison
+          path: .comparison-results/report.json
+          include-hidden-files: true
+          if-no-files-found: ignore
+
+  upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # The upstream build needs more memory than the runner has; add swap.
+      - name: Add swap space
+        run: |
+          sudo swapoff -a
+          sudo rm -f /swapfile /mnt/swapfile
+          sudo fallocate -l 16G /mnt/swapfile
+          sudo chmod 600 /mnt/swapfile
+          sudo mkswap /mnt/swapfile
+          sudo swapon /mnt/swapfile
+          free -h
+      - uses: leanprover/lean-action@v1
+        with:
+          build-args: HonoLeanUpstream
+      - name: Check out the pinned raw Hono source
+        uses: actions/checkout@v7
+        with:
+          repository: honojs/hono
+          ref: ${{ env.HONO_REF }}
+          path: .hono-cache
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.22.2
+      - name: Check source excerpts, models, and native evidence
+        run: verification/run_checks.sh .hono-cache
+      - name: Replay upstream proofs through the kernel
+        run: lake env leanchecker --fresh HonoLeanUpstream

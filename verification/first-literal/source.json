@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragment": {
+    "firstLine": 87,
+    "lastLine": 119,
+    "startByte": 2489,
+    "endByteExclusive": 3583,
+    "sha256": "40295e4189f04ed59f9f9e782ad57927bf00c520c722a8f4dcf7cd517540ea76",
+    "sourceCopy": "verification/first-literal/full.ts.txt"
+  },
+  "components": [
+    {
+      "sourceMetadata": "verification/search-setup/source.json",
+      "fragment": "startup",
+      "sourceCopy": "verification/search-setup/startup.ts.txt",
+      "firstLine": 87,
+      "lastLine": 97,
+      "startByte": 2489,
+      "endByteExclusive": 2849,
+      "sha256": "5010dd28d22d490760e62ef2ffd029727bf11e08b404dd99cf53f2028c513088"
+    },
+    {
+      "sourceMetadata": "verification/loop-entry/source.json",
+      "fragment": "outer",
+      "sourceCopy": "verification/loop-entry/outer.ts.txt",
+      "firstLine": 99,
+      "lastLine": 99,
+      "startByte": 2850,
+      "endByteExclusive": 2886,
+      "sha256": "0a355c4f0b0a29e3b1830752b8a4bb8dd57296688128e0228af0ef24fc42bd8e"
+    },
+    {
+      "sourceMetadata": "verification/iteration-setup/source.json",
+      "fragment": "iteration",
+      "sourceCopy": "verification/iteration-setup/iteration.ts.txt",
+      "firstLine": 100,
+      "lastLine": 102,
+      "startByte": 2886,
+      "endByteExclusive": 2995,
+      "sha256": "40c7e7effca1b775dd2e2a888512bf4de6cae3afdcc299a12960de1ab70163e1"
+    },
+    {
+      "sourceMetadata": "verification/loop-entry/source.json",
+      "fragment": "inner",
+      "sourceCopy": "verification/loop-entry/inner.ts.txt",
+      "firstLine": 104,
+      "lastLine": 104,
+      "startByte": 2996,
+      "endByteExclusive": 3059,
+      "sha256": "3f6a1b09b9e96fb41991a75c0aab547243e2e1a9bbb85c4d057a3aa17979b128"
+    },
+    {
+      "sourceMetadata": "verification/iteration-setup/source.json",
+      "fragment": "entry",
+      "sourceCopy": "verification/iteration-setup/entry.ts.txt",
+      "firstLine": 105,
+      "lastLine": 119,
+      "startByte": 3059,
+      "endByteExclusive": 3583,
+      "sha256": "5b81e8170de12ec41069162ef15577a30aa7f65139f19710639dba044aee3680"
+    }
+  ],
+  "gaps": [
+    {
+      "line": 98,
+      "contents": "LF"
+    },
+    {
+      "line": 103,
+      "contents": "LF"
+    }
+  ],
+  "parserBoundary": "Explicit segmented startup/header/declaration/private-control prefix parsing. A kernel-checked string reassembly equation covers every character of87\u2013119, including two blank LF gaps; no full TypeScript frontend or loop body/completion theorem.",
+  "semanticBoundary": "Source-created collector, arrays, reset, first indices/guards and complete first literal branch; initial-only storage/record/read facts derive helper readiness. Pattern suffix, later iterations, queue progression, sorting and native adequacy remain open.",
+  "formalCompleteSearchTheorem": null,
+  "formalCompleteLoopBodyTheorem": null
+}

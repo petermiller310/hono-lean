@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "outer": {
+      "firstLine": 99,
+      "lastLine": 99,
+      "startByte": 2850,
+      "endByteExclusive": 2886,
+      "sha256": "0a355c4f0b0a29e3b1830752b8a4bb8dd57296688128e0228af0ef24fc42bd8e",
+      "whitespacePolicy": "Exact indentation and trailing LF retained; EOF immediately follows the actual opening brace line. No body is appended."
+    },
+    "inner": {
+      "firstLine": 104,
+      "lastLine": 104,
+      "startByte": 2996,
+      "endByteExclusive": 3059,
+      "sha256": "3f6a1b09b9e96fb41991a75c0aab547243e2e1a9bbb85c4d057a3aa17979b128",
+      "whitespacePolicy": "Exact indentation and trailing LF retained; EOF immediately follows the actual opening brace line. No body is appended."
+    }
+  },
+  "sourceSubset": "Actual for(let initialization; numeric guard; named postincrement) prefixes, parsed through the real opening brace and EOF.",
+  "controlFlowBoundary": "Header initialization/test/increment operations compose with selected actual startup and body-prefix declarations. No fake body, full for-body interpreter, loop completion, remaining branches or whole-search reachability theorem is supplied.",
+  "snapshotBoundary": "Outer len and inner len2 are saved numeric bounds. Later reads require current array/binding frames; a true guard alone does not imply a mutated array still contains that index.",
+  "formalCompleteSearchTheorem": null,
+  "formalCompleteLoopBodyTheorem": null
+}

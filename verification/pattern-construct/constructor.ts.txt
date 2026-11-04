@@ -1,0 +1,1 @@
+new RegExp(`^${match[2]}$`)

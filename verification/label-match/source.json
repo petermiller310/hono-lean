@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/utils/url.ts",
+  "sourceGitBlob": "201383736f2531bf626427957e896b8fcc816ccf",
+  "sourceSha256": "d1f85f414ed8fd3682000499e74e8723139810fd612e1e1a1b4075a52ef91248",
+  "fragments": {
+    "full": {
+      "firstLine": 60,
+      "lastLine": 60,
+      "startByte": 1387,
+      "endByteExclusive": 1446,
+      "sha256": "e1a741ae801aec83c5926a9d2b71e0b2a6dce9ee29406ef602a8d54a862d0207",
+      "sourceCopy": "verification/label-match/full.ts.txt"
+    },
+    "call": {
+      "firstLine": 60,
+      "lastLine": 60,
+      "startByte": 1403,
+      "endByteExclusive": 1445,
+      "sha256": "a98a32751f6acbeab063921e57fd41e2e4bd7a27840a95f957c3ea1e823fbad8",
+      "sourceCopy": "verification/label-match/call.ts.txt"
+    },
+    "literal": {
+      "firstLine": 60,
+      "lastLine": 60,
+      "startByte": 1415,
+      "endByteExclusive": 1444,
+      "sha256": "47817d28fa608a72aa9430717bf92373f21dec0f2b85758148b99d8d5a89ee94",
+      "sourceCopy": "verification/label-match/literal.ts.txt"
+    }
+  },
+  "languageReference": "ECMA-262, 16th edition (2025)",
+  "sourceBoundary": "Actual59B const declaration,42B method call and29B regular expression literal. The containing wildcard guard, if/cache/terminal branch and getPattern function are separate source obligations.",
+  "semanticBoundary": "Retained regex syntax and genuine capturing operational execution; primitive current String.match, intrinsic literal creation, typed Symbol.match/current flags/exec dispatch under explicit initial standard-realm interpretation. Independent UTF16 label decomposition, capture values/spans and fresh capture-array/frame contract. No desired capture array or trusted label parser input.",
+  "nativeBoundary": "Native unwrapped selected declaration and optional selected later activations; finite observations and wrappers/JSON/engine/frontend/realm interpretation remain unverified. Hidden compiled records and protocol events are model-only. ENGINE-FLAGS-1 preserves the pinned Node direct-global versus Bun selected-2025 flags path, with an observable throwing-flags-getter reproducer; no native protocol equality or new comparison allowance.",
+  "formalCompleteGetPatternTheorem": null,
+  "formalCompleteSearchTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

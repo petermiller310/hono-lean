@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "startup": {
+      "firstLine": 87,
+      "lastLine": 97,
+      "startByte": 2489,
+      "endByteExclusive": 2849,
+      "sha256": "5010dd28d22d490760e62ef2ffd029727bf11e08b404dd99cf53f2028c513088",
+      "whitespacePolicy": "Exact indentation, comment, blank lines and trailing LF retained"
+    }
+  },
+  "sourceSubset": "Contiguous startup declarations, runtime this alias, private DATA reset, fresh dense arrays, actual imported splitPath call, saved length and nullable offset declaration.",
+  "callBoundary": "The explicit string-function table supplies the parsed splitPath closure/import identity. Its actual body executes on the current heap; caller environment, private names and runtime this are restored. Selected body does not read this; the function-call model uses module-undefined this.",
+  "controlFlowBoundary": "Search headers99/104, traversal reachability, other branches and native module/transpiler/realm/heap adequacy remain open. Subsequent iteration/node selection uses explicit separately supplied index activations.",
+  "formalCompleteSearchTheorem": null,
+  "formalNativeModuleLinkingTheorem": null
+}

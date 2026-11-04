@@ -1,0 +1,7 @@
+export const splitPath = (path: string): string[] => {
+  const paths = path.split('/')
+  if (paths[0] === '') {
+    paths.shift()
+  }
+  return paths
+}

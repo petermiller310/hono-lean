@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/honojs/hono.git",
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "create": {
+      "firstLine": 33,
+      "lastLine": 33,
+      "startByte": 907,
+      "endByteExclusive": 950,
+      "sha256": "b7df4a9f23d3c5e90e79e372d65517305d12c13c6bd14196c523c12243be4467",
+      "whitespacePolicy": "Exact indentation and LF retained"
+    },
+    "add": {
+      "firstLine": 51,
+      "lastLine": 51,
+      "startByte": 1482,
+      "endByteExclusive": 1519,
+      "sha256": "0d625e45f8892b55c9a47b8e397d948154933fbf909b328611c4002d82a9f3ac",
+      "whitespacePolicy": "Exact indentation and LF retained"
+    },
+    "spread": {
+      "firstLine": 58,
+      "lastLine": 58,
+      "startByte": 1619,
+      "endByteExclusive": 1636,
+      "sha256": "6ba25aee0a3f4c964d594436a7c4884f6ff47f87206917d66a182e738249d2da",
+      "whitespacePolicy": "Exact expression window; no indentation, field label, comma or LF added"
+    }
+  },
+  "containingMethod": {
+    "name": "Node.insert",
+    "firstLine": 28,
+    "lastLine": 62,
+    "startByte": 709,
+    "endByteExclusive": 1682,
+    "sha256": "fcb9f4c4e1b51d3146e3ead63c590834f1102c443f9a285fc457dd3b5791a25b",
+    "source": "  insert(method: string, path: string, handler: T): void {\n    // eslint-disable-next-line @typescript-eslint/no-this-alias\n    let curNode: Node<T> = this\n    const parts = splitRoutingPath(path)\n\n    const possibleKeys = new Set<string>()\n\n    let i = 0\n    for (const p of parts) {\n      const nextP = parts[++i]\n      const pattern =\n        getPattern(p, nextP) ||\n        (nextP === undefined && p && p.indexOf('*') === p.length - 1 ? p : null)\n      const isParam = Array.isArray(pattern)\n      const key = isParam ? pattern[0] : pattern || p\n\n      const child = (curNode.#children[key] ||= new Node())\n      if (pattern && !child.#pattern) {\n        child.#pattern = pattern\n        curNode.#patterns.push(child)\n      }\n      curNode = child\n      if (isParam) {\n        possibleKeys.add(pattern[1])\n      }\n    }\n\n    curNode.#methods.push({\n      [method]: {\n        handler,\n        possibleKeys: [...possibleKeys],\n        score: ++order,\n      },\n    })\n  }\n",
+    "verificationStatus": "Provenance context only; insertion traversal is not parsed or verified"
+  },
+  "languageReference": "ECMA-262 16th edition (2025)",
+  "sourceSubset": "Generic constructor with retained string type-argument metadata; method add with indexed argument; array literal spread",
+  "traceScope": "Finite supplied sequence of successful primitive-string Add events; no proof of Node.insert branch/trace/string-key production",
+  "nativeBoundary": "Standard constructor/add/iterator dispatch and no interleaved iterator mutation; TS erasure/native engine adequacy remain open",
+  "formalInsertTraversalTheorem": null
+}

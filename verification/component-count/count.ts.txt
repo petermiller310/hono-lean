@@ -1,0 +1,1 @@
+                const componentCount = m[0].match(/\//g)?.length ?? 0

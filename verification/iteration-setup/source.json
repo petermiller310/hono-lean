@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "search": {
+      "firstLine": 96,
+      "lastLine": 97,
+      "startByte": 2776,
+      "endByteExclusive": 2849,
+      "sha256": "21008e5f4fa8f4fe06a6d57e9818519e9a92eb1233dcd997b99a872f955e7e22",
+      "whitespacePolicy": "Exact indentation and trailing LF retained"
+    },
+    "iteration": {
+      "firstLine": 100,
+      "lastLine": 102,
+      "startByte": 2886,
+      "endByteExclusive": 2995,
+      "sha256": "40c7e7effca1b775dd2e2a888512bf4de6cae3afdcc299a12960de1ab70163e1",
+      "whitespacePolicy": "Exact indentation and trailing LF retained"
+    },
+    "entry": {
+      "firstLine": 105,
+      "lastLine": 119,
+      "startByte": 3059,
+      "endByteExclusive": 3583,
+      "sha256": "5b81e8170de12ec41069162ef15577a30aa7f65139f19710639dba044aee3680",
+      "whitespacePolicy": "Exact indentation and trailing LF retained"
+    }
+  },
+  "sourceSubset": "Dense array length/index reads, subtraction/equality, typed lexical declarations, fresh empty array, and complete literal-child branch.",
+  "activationBoundary": "The three windows execute separately. Numeric i and j are supplied across omitted loop headers99/104. No contiguous100-to105 block, loop-header production or full loop reachability theorem is claimed.",
+  "openBoundary": "splitPath production, saved for-header lengths and conditions, interleaved pattern branches, queue progression, native language/heap adequacy and complete search remain open.",
+  "formalCompleteSearchTheorem": null,
+  "formalLoopReachabilityTheorem": null
+}

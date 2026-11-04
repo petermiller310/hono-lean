@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "repository": "https://github.com/honojs/hono.git",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "full": {
+      "firstLine": 174,
+      "lastLine": 180,
+      "startByte": 5388,
+      "endByteExclusive": 5705,
+      "sha256": "fce614b83a4e70c4b00d6f4e8e609d20109770daf866b281b2677862be5168c2",
+      "sourceCopy": "verification/child-enumeration/full.ts.txt"
+    },
+    "prefix": {
+      "firstLine": 174,
+      "lastLine": 175,
+      "startByte": 5388,
+      "endByteExclusive": 5476,
+      "sha256": "c6ae2f5921daed3661ae7c31887aec3be0814b82ebff4be7f84f482c87217fae",
+      "sourceCopy": "verification/child-enumeration/prefix.ts.txt"
+    },
+    "suffix": {
+      "firstLine": 179,
+      "lastLine": 180,
+      "startByte": 5667,
+      "endByteExclusive": 5705,
+      "sha256": "26dce1bb232cf60ddd13c8128e27e1ef85a7a1803c10df63468c98048974acfe",
+      "sourceCopy": "verification/child-enumeration/suffix.ts.txt"
+    }
+  },
+  "countScheduleDependency": {
+    "sourceMetadata": "verification/component-count/source.json",
+    "firstLine": 176,
+    "lastLine": 178,
+    "startByte": 5476,
+    "endByteExclusive": 5667,
+    "sha256": "134ae3cfeeabb597d841a7e8196603fef6578c30318252cdfc24e1f7a0b61a8b",
+    "sourceCopy": "verification/component-count/full.ts.txt"
+  },
+  "languageReference": "ECMA-262, 16th edition (2025)",
+  "sourceBoundary": "Complete original for-in/private write/count/scheduling/break text. Middle is the existing checked191B source. Containing search/class and earlier matcher.exec are not included.",
+  "semanticBoundary": "Explicit ordinary null-prototype own-string descriptor enumeration and key-insensitive body interpretation, private branded DATA write, authoritative sparse arrays and projected regexp store. No supplied enumeration outcome/count/future readiness; full frontend/native/whole-search adequacy remains open.",
+  "formalCompleteSearchTheorem": null,
+  "formalNativeLanguageAdequacyTheorem": null
+}

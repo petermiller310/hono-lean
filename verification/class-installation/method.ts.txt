@@ -1,0 +1,21 @@
+  #pushHandlerSets(
+    handlerSets: HandlerParamsSet<T>[],
+    node: Node<T>,
+    method: string,
+    nodeParams: Record<string, string>,
+    params?: Record<string, string>
+  ): void {
+    for (let i = 0, len = node.#methods.length; i < len; i++) {
+      const m = node.#methods[i]
+      const handlerSet = (m[method] || m[METHOD_NAME_ALL]) as HandlerParamsSet<T>
+      if (handlerSet) {
+        handlerSet.params = createNullObject()
+        handlerSets.push(handlerSet)
+        for (let i = 0, len = handlerSet.possibleKeys.length; i < len; i++) {
+          const key = handlerSet.possibleKeys[i]
+          handlerSet.params[key] =
+            params?.[key] && !i ? params[key] : (nodeParams[key] ?? params?.[key])
+        }
+      }
+    }
+  }

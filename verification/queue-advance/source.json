@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/honojs/hono.git",
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceGitBlob": "580b859a912a8c2d10982d430de9357da241048a",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragment": {
+    "firstLine": 209,
+    "lastLine": 210,
+    "startByte": 6428,
+    "endByteExclusive": 6537,
+    "sha256": "c24807d3575aeca85813064c40bb8b44ca1287699c984e081847bb8ed45a3e8e",
+    "sourceCopy": "verification/queue-advance/source.ts.txt"
+  },
+  "languageReference": "ECMA-262 16th edition (2025)",
+  "parserBoundary": "Explicit linear mutable-sequence entry reuses the shared lexer, expression syntax and statement boundaries; only supplied mutable outer bindings can be rebound. Existing block/function/private-control admission is unchanged.",
+  "semanticBoundary": "Exact shift, conditional concat/reuse and first mutable curNodes binding replacement. Dense ordinary arrays and frozen standard intrinsics; native species/spreadability, exotic/sparse arrays, mutable lexical-cell adequacy and full loop/search remain open.",
+  "formalCompleteLoopTheorem": null,
+  "formalCompleteSearchTheorem": null
+}

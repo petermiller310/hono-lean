@@ -1,0 +1,7 @@
+    curNode.#methods.push({
+      [method]: {
+        handler,
+        possibleKeys: [...possibleKeys],
+        score: ++order,
+      },
+    })

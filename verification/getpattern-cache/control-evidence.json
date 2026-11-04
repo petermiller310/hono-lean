@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "verified": false,
+  "nativeOnly": true,
+  "records": [
+    {
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "bun",
+      "version": "1.4.0",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 533,
+      "sourceSha256": "0ce62880eb018a718c7d3f32bb413e31bf5b8c42e31bba1e289d280529a47cf5",
+      "verified": false,
+      "nativeOnly": true,
+      "observerVerified": false,
+      "closureBootstrapVerified": false,
+      "typescriptInitializationObserved": false,
+      "baselineAllowlistChanged": false,
+      "results": [
+        {
+          "id": "current-second-get",
+          "result": "return",
+          "trace": [
+            "get",
+            "get"
+          ]
+        },
+        {
+          "id": "inherited-custom-setter",
+          "result": [
+            ":id",
+            "id",
+            true
+          ],
+          "trace": [
+            "get",
+            "set",
+            "get"
+          ],
+          "returnedSameAsStored": true,
+          "ownCacheKey": false
+        },
+        {
+          "id": "setter-escapes-RHS-then-throws",
+          "outcome": {
+            "ok": false,
+            "message": "setter-threw"
+          },
+          "retained": [
+            ":id",
+            "id",
+            true
+          ],
+          "trace": [
+            "get",
+            "set"
+          ],
+          "rollbackClaim": false
+        },
+        {
+          "id": "effectful-next-coercion-before-cache",
+          "result": "from-coercion",
+          "trace": [
+            "coerce:string",
+            "get",
+            "get"
+          ]
+        },
+        {
+          "id": "array-as-cache-native-success",
+          "result": [
+            ":id",
+            "id",
+            true
+          ],
+          "length": 0,
+          "ownCacheKey": true
+        },
+        {
+          "id": "legacy-prototype-setter-array-RHS",
+          "resultUndefined": true,
+          "prototype": [
+            ":id",
+            "id",
+            true
+          ],
+          "ownCacheKey": false
+        }
+      ],
+      "scope": "Exact full533B body with explicit nonstandard fixture caches/coercion callbacks. Separate native-only controls, not admitted DATA-profile/native trace/error-state/rollback theorems. Setter effects and array caches are actual native successes, not model TypeErrors."
+    },
+    {
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "node",
+      "version": "22.22.2",
+      "checkedPinnedBlobs": 315,
+      "sourceBytes": 533,
+      "sourceSha256": "0ce62880eb018a718c7d3f32bb413e31bf5b8c42e31bba1e289d280529a47cf5",
+      "verified": false,
+      "nativeOnly": true,
+      "observerVerified": false,
+      "closureBootstrapVerified": false,
+      "typescriptInitializationObserved": false,
+      "baselineAllowlistChanged": false,
+      "results": [
+        {
+          "id": "current-second-get",
+          "result": "return",
+          "trace": [
+            "get",
+            "get"
+          ]
+        },
+        {
+          "id": "inherited-custom-setter",
+          "result": [
+            ":id",
+            "id",
+            true
+          ],
+          "trace": [
+            "get",
+            "set",
+            "get"
+          ],
+          "returnedSameAsStored": true,
+          "ownCacheKey": false
+        },
+        {
+          "id": "setter-escapes-RHS-then-throws",
+          "outcome": {
+            "ok": false,
+            "message": "setter-threw"
+          },
+          "retained": [
+            ":id",
+            "id",
+            true
+          ],
+          "trace": [
+            "get",
+            "set"
+          ],
+          "rollbackClaim": false
+        },
+        {
+          "id": "effectful-next-coercion-before-cache",
+          "result": "from-coercion",
+          "trace": [
+            "coerce:string",
+            "get",
+            "get"
+          ]
+        },
+        {
+          "id": "array-as-cache-native-success",
+          "result": [
+            ":id",
+            "id",
+            true
+          ],
+          "length": 0,
+          "ownCacheKey": true
+        },
+        {
+          "id": "legacy-prototype-setter-array-RHS",
+          "resultUndefined": true,
+          "prototype": [
+            ":id",
+            "id",
+            true
+          ],
+          "ownCacheKey": false
+        }
+      ],
+      "scope": "Exact full533B body with explicit nonstandard fixture caches/coercion callbacks. Separate native-only controls, not admitted DATA-profile/native trace/error-state/rollback theorems. Setter effects and array caches are actual native successes, not model TypeErrors."
+    }
+  ]
+}

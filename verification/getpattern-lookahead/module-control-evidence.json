@@ -1,0 +1,2727 @@
+{
+  "schemaVersion": 1,
+  "verified": false,
+  "nativeOnly": true,
+  "formalNativeLanguageAdequacyTheorem": null,
+  "formalCacheOrClosureTheorem": null,
+  "records": [
+    {
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "bun",
+      "version": "1.4.0",
+      "checkedPinnedBlobs": 315,
+      "verified": false,
+      "observerVerified": false,
+      "typescriptLoaderVerified": false,
+      "nativeLanguageAdequacyVerified": false,
+      "sourceBytes": 38,
+      "tupleBytes": 60,
+      "completeBodyBytes": 576,
+      "executedBodySha256": "f72f8a61edff659809d83048b3b8861b2baf00885682c86943e4e55fdedc7419",
+      "actualModule": true,
+      "selectedSourceExtractionVerified": false,
+      "ancestorGuardsExecuted": true,
+      "hiddenAllocationsObserved": false,
+      "results": [
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              48,
+              123,
+              91,
+              97,
+              45,
+              122,
+              93,
+              43,
+              125,
+              35,
+              116,
+              97,
+              105,
+              108
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              48
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            97,
+            45,
+            122,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            116,
+            97,
+            105,
+            108,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": 0,
+            "writable": true,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    97
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  97,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    122,
+                    122
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  122,
+                  122,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    97
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  97,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    97
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  97,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        },
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              49,
+              123,
+              91,
+              48,
+              45,
+              57,
+              93,
+              43,
+              125,
+              35,
+              65,
+              57
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              49
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            48,
+            45,
+            57,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            65,
+            57,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": 7,
+            "writable": false,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  65,
+                  57
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    57,
+                    57
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  57,
+                  57,
+                  47,
+                  65,
+                  57,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  65,
+                  57,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  65,
+                  57,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        },
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              50,
+              123,
+              91,
+              65,
+              45,
+              122,
+              93,
+              43,
+              125,
+              35,
+              90
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              50
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            65,
+            45,
+            122,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            90,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": -3,
+            "writable": true,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  90
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    122,
+                    122
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  122,
+                  122,
+                  47,
+                  90,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  90,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  90,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        },
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              51,
+              123,
+              91,
+              48,
+              45,
+              122,
+              93,
+              43,
+              125,
+              35,
+              116,
+              97,
+              105,
+              108,
+              50
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              51
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            48,
+            45,
+            122,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            116,
+            97,
+            105,
+            108,
+            50,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": 9007199254740991,
+            "writable": false,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  50
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    122,
+                    122
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  122,
+                  122,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  50,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  50,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  50,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        },
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              52,
+              123,
+              91,
+              65,
+              45,
+              90,
+              93,
+              43,
+              125,
+              35,
+              110,
+              101,
+              120,
+              116
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              52
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            65,
+            45,
+            90,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            110,
+            101,
+            120,
+            116,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": 0,
+            "writable": false,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  110,
+                  101,
+                  120,
+                  116
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    90,
+                    90
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  90,
+                  90,
+                  47,
+                  110,
+                  101,
+                  120,
+                  116,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  110,
+                  101,
+                  120,
+                  116,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  110,
+                  101,
+                  120,
+                  116,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        },
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              53,
+              123,
+              91,
+              48,
+              45,
+              48,
+              93,
+              43,
+              125,
+              35,
+              88
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              53
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            48,
+            45,
+            48,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            88,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": 17,
+            "writable": true,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  88
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48,
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  48,
+                  47,
+                  88,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  88,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  88,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        }
+      ],
+      "scope": "Unmodified full pinned url.ts export, finite observation only; TS/module/closure/cache/native adequacy unverified."
+    },
+    {
+      "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+      "runtime": "node",
+      "version": "22.22.2",
+      "checkedPinnedBlobs": 315,
+      "verified": false,
+      "observerVerified": false,
+      "typescriptLoaderVerified": false,
+      "nativeLanguageAdequacyVerified": false,
+      "sourceBytes": 38,
+      "tupleBytes": 60,
+      "completeBodyBytes": 576,
+      "executedBodySha256": "f72f8a61edff659809d83048b3b8861b2baf00885682c86943e4e55fdedc7419",
+      "actualModule": true,
+      "selectedSourceExtractionVerified": false,
+      "ancestorGuardsExecuted": true,
+      "hiddenAllocationsObserved": false,
+      "results": [
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              48,
+              123,
+              91,
+              97,
+              45,
+              122,
+              93,
+              43,
+              125,
+              35,
+              116,
+              97,
+              105,
+              108
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              48
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            97,
+            45,
+            122,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            116,
+            97,
+            105,
+            108,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": 0,
+            "writable": true,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    97
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  97,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    122,
+                    122
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  122,
+                  122,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    97
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  97,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    97
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  97,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        },
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              49,
+              123,
+              91,
+              48,
+              45,
+              57,
+              93,
+              43,
+              125,
+              35,
+              65,
+              57
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              49
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            48,
+            45,
+            57,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            65,
+            57,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": 7,
+            "writable": false,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  65,
+                  57
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    57,
+                    57
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  57,
+                  57,
+                  47,
+                  65,
+                  57,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  65,
+                  57,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  65,
+                  57,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 7,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        },
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              50,
+              123,
+              91,
+              65,
+              45,
+              122,
+              93,
+              43,
+              125,
+              35,
+              90
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              50
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            65,
+            45,
+            122,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            90,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": -3,
+            "writable": true,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  90
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    122,
+                    122
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  122,
+                  122,
+                  47,
+                  90,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  90,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  90,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": -3,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        },
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              51,
+              123,
+              91,
+              48,
+              45,
+              122,
+              93,
+              43,
+              125,
+              35,
+              116,
+              97,
+              105,
+              108,
+              50
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              51
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            48,
+            45,
+            122,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            116,
+            97,
+            105,
+            108,
+            50,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": 9007199254740991,
+            "writable": false,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  50
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    122,
+                    122
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  122,
+                  122,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  50,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  50,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  116,
+                  97,
+                  105,
+                  108,
+                  50,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 9007199254740991,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        },
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              52,
+              123,
+              91,
+              65,
+              45,
+              90,
+              93,
+              43,
+              125,
+              35,
+              110,
+              101,
+              120,
+              116
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              52
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            65,
+            45,
+            90,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            110,
+            101,
+            120,
+            116,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": 0,
+            "writable": false,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  110,
+                  101,
+                  120,
+                  116
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    90,
+                    90
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  90,
+                  90,
+                  47,
+                  110,
+                  101,
+                  120,
+                  116,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  110,
+                  101,
+                  120,
+                  116,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    65
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  65,
+                  47,
+                  110,
+                  101,
+                  120,
+                  116,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 0,
+                "writable": false,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        },
+        {
+          "ok": true,
+          "tuple": [
+            [
+              58,
+              102,
+              117,
+              108,
+              108,
+              53,
+              123,
+              91,
+              48,
+              45,
+              48,
+              93,
+              43,
+              125,
+              35,
+              88
+            ],
+            [
+              102,
+              117,
+              108,
+              108,
+              53
+            ]
+          ],
+          "source": [
+            94,
+            91,
+            48,
+            45,
+            48,
+            93,
+            43,
+            40,
+            63,
+            61,
+            92,
+            47,
+            88,
+            41
+          ],
+          "flags": [],
+          "ownSource": false,
+          "ownFlags": false,
+          "prototypeStandard": true,
+          "extensible": true,
+          "lastIndex": {
+            "value": 17,
+            "writable": true,
+            "enumerable": false,
+            "configurable": false
+          },
+          "queries": [
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  88
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48,
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  48,
+                  47,
+                  88,
+                  47,
+                  0,
+                  55296
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  88,
+                  115
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": null,
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            },
+            {
+              "value": {
+                "values": [
+                  [
+                    48
+                  ]
+                ],
+                "index": 0,
+                "input": [
+                  48,
+                  47,
+                  88,
+                  13,
+                  10,
+                  8232,
+                  8233
+                ],
+                "groupsUndefined": true
+              },
+              "lastIndex": {
+                "value": 17,
+                "writable": true,
+                "enumerable": false,
+                "configurable": false
+              }
+            }
+          ],
+          "oldFrames": true
+        }
+      ],
+      "scope": "Unmodified full pinned url.ts export, finite observation only; TS/module/closure/cache/native adequacy unverified."
+    }
+  ]
+}

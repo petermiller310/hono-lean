@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "revision": "5ca49b0720755c585c9a9835f0a479ceea36fb52",
+  "sourcePath": "src/router/trie-router/node.ts",
+  "sourceSha256": "faa72577fbea974a954c6c0e36546e3f53da97418ae154d2583ae43de1e5a825",
+  "fragments": {
+    "registration": {
+      "sourcePath": "src/router/trie-router/node.ts",
+      "sourceCopy": "verification/methods-push/source.ts.txt",
+      "startByte": 1534,
+      "endByteExclusive": 1678,
+      "sha256": "47cdbb194d9bd2dbd7c024e2d56e01e2d9bb3c10971e5af82ae0c5ecfaa7ab1b"
+    },
+    "collector": {
+      "sourcePath": "src/router/trie-router/node.ts",
+      "sourceCopy": "verification/search-entry/collector.ts.txt",
+      "startByte": 2489,
+      "endByteExclusive": 2539,
+      "sha256": "1ea9120b7217f11add1f8e423040d71aaaa291284a32e19bf763e424c52afb66"
+    },
+    "loop": {
+      "sourcePath": "src/router/trie-router/node.ts",
+      "sourceCopy": "verification/methods-loop/loop.ts.txt",
+      "startByte": 1870,
+      "endByteExclusive": 2426,
+      "sha256": "9c2ace978dfc44df5b7046c74c808861a495d0e5f360b43762a08163340a5e19"
+    }
+  },
+  "dependencyChecks": [
+    "verification/methods-push/source.py",
+    "verification/search-entry/source.py",
+    "verification/methods-loop/source.py",
+    "verification/nullobject/source.py",
+    "verification/key-set/source.py"
+  ],
+  "claim": "Initial structural layout derives prefix readiness for the existing parsed loop; registration, later collector and helper activation remain explicit separate stages.",
+  "sourceBoundary": "These are three exact existing source fragments, not one lexical block. Class construction, module/helper linking, caller activation/arguments and intervening search effects remain open.",
+  "testsBoundary": "Finite multi-registration and repeated-query composition evidence is separate from the scope of the universal initial-layout and registration bridge theorems."
+}

@@ -1,0 +1,1 @@
+        patternCache[cacheKey] = [label, match[1], true]

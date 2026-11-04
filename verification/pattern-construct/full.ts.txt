@@ -1,0 +1,1 @@
+[label, match[1], new RegExp(`^${match[2]}$`)]
